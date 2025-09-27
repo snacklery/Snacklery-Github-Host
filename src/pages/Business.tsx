@@ -5,7 +5,11 @@ import { Building, Users, Truck, HeadphonesIcon, TrendingUp, Award, Plane, MapPi
 import { Link } from "react-router-dom";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const Business = () => {
+interface BusinessProps {
+  onContactClick?: () => void;
+}
+
+const Business = ({ onContactClick }: BusinessProps) => {
   const benefits = [
     {
       icon: Building,
@@ -214,10 +218,13 @@ const Business = () => {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-          <Button asChild variant="outline" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-            <Link to="/contact">
-              Partner With Us
-            </Link>
+          <Button 
+            variant="outline" 
+            size="xl" 
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+            onClick={onContactClick}
+          >
+            Partner With Us
           </Button>
         </div>
       </section>

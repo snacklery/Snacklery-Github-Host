@@ -6,7 +6,11 @@ import heroImage from "@/assets/hero-image.jpg";
 import productsImage from "@/assets/soup-with-edible-spoons.jpg";
 import LogoCarousel from "@/components/LogoCarousel";
 
-const Home = () => {
+interface HomeProps {
+  onContactClick?: () => void;
+}
+
+const Home = ({ onContactClick }: HomeProps) => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -358,8 +362,13 @@ const Home = () => {
             <Button variant="outline" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-10 py-4 border-2">
               <Link to="/business">Partner With Us</Link>
             </Button>
-            <Button variant="outline" size="xl" className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-10 py-4">
-              <Link to="/contact">Request Samples</Link>
+            <Button 
+              variant="outline" 
+              size="xl" 
+              className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-10 py-4"
+              onClick={onContactClick}
+            >
+              Request Samples
             </Button>
           </div>
         </div>
