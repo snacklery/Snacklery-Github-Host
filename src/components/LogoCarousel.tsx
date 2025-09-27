@@ -26,24 +26,31 @@ const LogoCarousel = () => {
   return (
     <div className="overflow-hidden">
       <div className="flex animate-scroll-left space-x-8">
-        {allPartners.map((partner, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
-            title={partner.name}
-          >
-            <img
-              src={partner.logo}
-              alt={partner.name}
-              className="max-h-24 max-w-44 object-contain transition-transform hover:scale-105"
-              loading="lazy"
-              onError={(e) => {
-                console.warn(`Failed to load image: ${partner.logo}`);
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
-        ))}
+        {allPartners.map((partner, index) => {
+          const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
+          return (
+            <div
+              key={index}
+              className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
+              title={partner.name}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className={`object-contain transition-transform hover:scale-105 ${
+                  isBadrukaLogo 
+                    ? "max-h-28 max-w-48 scale-110" 
+                    : "max-h-24 max-w-44"
+                }`}
+                loading="lazy"
+                onError={(e) => {
+                  console.warn(`Failed to load image: ${partner.logo}`);
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
