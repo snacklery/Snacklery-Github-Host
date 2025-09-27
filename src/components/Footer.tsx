@@ -18,16 +18,40 @@ const Footer = () => {
               the planet.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <a 
+                href="https://facebook.com/snacklery" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                aria-label="Follow us on Facebook"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <a 
+                href="https://twitter.com/snacklery" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                aria-label="Follow us on Twitter"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <a 
+                href="https://instagram.com/snacklery" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                aria-label="Follow us on Instagram"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <a 
+                href="https://linkedin.com/company/snacklery" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                aria-label="Follow us on LinkedIn"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

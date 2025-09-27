@@ -2,6 +2,7 @@ import React from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Link } from "react-router-dom";
 
 interface WhatsAppButtonProps {
   message?: string;
@@ -38,14 +39,23 @@ const WhatsAppButton = ({
           size="lg"
           className="rounded-full w-16 h-16 shadow-green hover:shadow-earth transition-smooth bg-green-500 hover:bg-green-600 text-white border-0"
         >
-          <a
-            href={contactUrl}
-            target={isMobile ? "_blank" : "_self"}
-            rel="noopener noreferrer"
-            aria-label={contactLabel}
-          >
-            {React.createElement(contactIcon, { className: "h-8 w-8" })}
-          </a>
+          {isMobile ? (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={contactLabel}
+            >
+              {React.createElement(contactIcon, { className: "h-8 w-8" })}
+            </a>
+          ) : (
+            <Link
+              to={contactPageUrl}
+              aria-label={contactLabel}
+            >
+              {React.createElement(contactIcon, { className: "h-8 w-8" })}
+            </Link>
+          )}
         </Button>
       </div>
     );
@@ -58,14 +68,23 @@ const WhatsAppButton = ({
       size={size}
       className={className}
     >
-      <a
-        href={contactUrl}
-        target={isMobile ? "_blank" : "_self"}
-        rel="noopener noreferrer"
-        aria-label={contactLabel}
-      >
-        {children}
-      </a>
+      {isMobile ? (
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={contactLabel}
+        >
+          {children}
+        </a>
+      ) : (
+        <Link
+          to={contactPageUrl}
+          aria-label={contactLabel}
+        >
+          {children}
+        </Link>
+      )}
     </Button>
   );
 };
