@@ -23,7 +23,7 @@ const LogoCarousel = () => {
   return (
     <div className="overflow-hidden">
       <div className="flex animate-scroll-left space-x-8">
-        {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
+        {[...partners, ...partners].map((partner, index) => (
           <div
             key={index}
             className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
