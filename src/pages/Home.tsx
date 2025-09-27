@@ -15,7 +15,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-foreground mb-8 leading-[1.1] tracking-tight">
-                <span className="text-foreground">"What if your cutlery could also be your meal?"</span> 🌍
+                <span className="text-foreground">🌍 "What if your cutlery could also be your meal?"</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-xl">
                 Snacklery makes edible spoons, stirrers, and straws that dissolve into coffee, soups, or mocktails—and can be eaten afterward.
