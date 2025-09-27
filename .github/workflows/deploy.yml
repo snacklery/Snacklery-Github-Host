@@ -33,6 +33,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Add MIME type headers
+        run: |
+          echo "AddType text/javascript .js" > ./dist/.htaccess
+          echo "AddType application/json .json" >> ./dist/.htaccess
+          echo "AddType image/x-icon .ico" >> ./dist/.htaccess
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
