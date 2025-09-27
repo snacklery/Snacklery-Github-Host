@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-# Trigger deployment with correct paths for custom domain
 
 permissions:
   contents: read
@@ -16,8 +15,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,52 +28,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Add MIME type headers and configuration
+      - name: Copy public files to dist
         run: |
-          cat > ./dist/.htaccess << 'EOF'
-          # MIME Types for proper serving
-          AddType text/javascript .js
-          AddType application/javascript .js
-          AddType text/javascript .mjs
-          AddType application/json .json
-          AddType image/x-icon .ico
-          AddType image/vnd.microsoft.icon .ico
-          AddType text/css .css
-          AddType image/svg+xml .svg
-          
-          # PWA Support
-          AddType application/manifest+json .json
-          AddType text/cache-manifest .manifest
-          
-          # Enable CORS for fonts and assets
-          <FilesMatch "\.(ttf|otf|eot|woff|woff2|svg|js|css|json|ico|manifest)$">
-            Header set Access-Control-Allow-Origin "*"
-          </FilesMatch>
-          
-          # Cache Control for PWA assets
-          <FilesMatch "\.(manifest|json)$">
-            Header set Cache-Control "no-cache, no-store, must-revalidate"
-          </FilesMatch>
-          
-          # Force HTTPS redirect
-          RewriteEngine On
-          RewriteCond %{HTTPS} off
-          RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-          
-          # Handle SPA routing
-          RewriteEngine On
-          RewriteRule ^index\.html$ - [L]
-          RewriteCond %{REQUEST_FILENAME} !-f
-          RewriteCond %{REQUEST_FILENAME} !-d
-          RewriteRule . /index.html [L]
-          EOF
+          cp public/manifest.json dist/
+          cp public/sw.js dist/
+          cp public/favicon.ico dist/
+          cp public/_headers dist/
+          mkdir -p dist/images
+          cp -r public/images/* dist/images/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -81,13 +53,6 @@ jobs:
         with:
           path: './dist'
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
