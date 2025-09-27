@@ -18,12 +18,8 @@ export default defineConfig(({ mode }) => ({
     }
   },
   server: {
-    host: "0.0.0.0",
-    port: parseInt(process.env.PORT as string) || 8080,
-  },
-  preview: {
-    host: "0.0.0.0",
-    port: parseInt(process.env.PORT as string) || 8080,
+    host: "localhost",
+    port: 5173,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

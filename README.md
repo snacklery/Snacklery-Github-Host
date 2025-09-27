@@ -71,37 +71,58 @@ This project is built with:
 
 ## Deployment
 
-This project is configured for deployment on [Render](https://render.com).
+This project is deployed on **Vercel** for optimal performance and zero cold starts.
 
-### Deploy to Render
+### 🚀 **Live Website**
+- **Vercel URL**: `https://snacklery.vercel.app` (after deployment)
+- **Custom Domain**: Available after domain setup
 
-1. **Connect Repository**
-   - Sign up/login to [Render](https://render.com)
-   - Click "New +" → "Web Service"
-   - Connect your GitHub repository: `snacklery/Snacklery-Github-Host`
+### ⚡ **Why Vercel?**
+- ✅ **Instant Loading** - No cold starts, always fast
+- ✅ **Global CDN** - Worldwide performance optimization
+- ✅ **Perfect for React** - Built specifically for frontend frameworks
+- ✅ **Free Tier** - 100GB bandwidth/month, unlimited projects
+- ✅ **Auto SSL** - Free HTTPS certificates
+- ✅ **Custom Domains** - Free domain connection
 
-2. **Deployment Configuration**
-   - The project includes a `render.yaml` file for automatic configuration
-   - Build Command: `npm install && npm run build`
-   - Start Command: `npm start`
-   - Environment: Node.js
+### 📋 **Deploy Your Own Copy**
 
-3. **Automatic Deployments**
-   - Every push to the main branch triggers an automatic deployment
-   - Build status and logs are available in the Render dashboard
+1. **Quick Deploy (2 minutes)**
+   ```bash
+   # Option 1: One-click deploy
+   # Go to vercel.com → Sign up with GitHub → Import repository
+   ```
 
-### Environment Variables
+2. **Manual Setup**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up/login with your GitHub account
+   - Click "New Project" → Import `snacklery/Snacklery-Github-Host`
+   - Click "Deploy" (Vercel auto-detects configuration)
+   - Get instant URL: `https://your-project.vercel.app`
 
-The following environment variables are automatically configured:
-- `NODE_ENV`: production
-- `PORT`: Dynamically assigned by Render
+3. **Automatic Configuration**
+   - Build Command: `npm run build` (auto-detected)
+   - Output Directory: `dist` (auto-detected)
+   - Install Command: `npm install` (auto-detected)
+   - Framework: Vite (auto-detected)
 
-### Custom Domain
+### 🌐 **Custom Domain Setup**
 
-To connect a custom domain:
-1. Navigate to your service in the Render dashboard
-2. Go to Settings → Custom Domains
-3. Add your domain and follow the DNS configuration instructions
+1. **Buy Domain** (~$12/year)
+   - Recommended: Namecheap, GoDaddy, or Google Domains
+   - Popular options: `snacklery.com`, `snacklery.in`
+
+2. **Connect to Vercel**
+   - In Vercel dashboard → Project Settings → Domains
+   - Add your domain (e.g., `snacklery.com`)
+   - Update DNS records at your domain provider
+   - SSL certificate is automatically provided
+
+### 🔄 **Automatic Deployments**
+- Every push to `main` branch triggers automatic deployment
+- Preview deployments for pull requests
+- Rollback to previous versions with one click
+- Real-time deployment logs and analytics
 
 ## Features
 
