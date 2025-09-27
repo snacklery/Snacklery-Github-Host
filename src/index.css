@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Snacklery Design System - Eco-friendly, clean, modern */
+
+@layer base {
+  :root {
+    /* Base Colors - Classic cream background */
+    --background: 45 25% 98%;
+    --foreground: 28 32% 18%;
+    
+    --card: 45 30% 96%;
+    --card-foreground: 28 32% 18%;
+
+    --popover: 45 30% 96%;
+    --popover-foreground: 28 32% 18%;
+
+    /* Primary - Warm Edible Golden (like honey/caramel) */
+    --primary: 28 85% 45%;
+    --primary-foreground: 45 25% 98%;
+    --primary-light: 32 75% 55%;
+    --primary-dark: 25 95% 35%;
+
+    /* Secondary - Fresh Mint Green */
+    --secondary: 120 40% 70%;
+    --secondary-foreground: 28 32% 18%;
+
+    /* Muted - Light Biscuit */
+    --muted: 42 25% 90%;
+    --muted-foreground: 30 25% 40%;
+
+    /* Accent - Warm Apricot */
+    --accent: 15 80% 70%;
+    --accent-foreground: 28 32% 18%;
+
+    /* Earth tones - Classic */
+    --earth: 35 35% 55%;
+    --earth-light: 35 25% 78%;
+    --earth-dark: 35 45% 35%;
+
+    /* Natural browns */
+    --brown: 25 25% 45%;
+    --brown-light: 25 20% 70%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 25% 98%;
+
+    --border: 120 15% 85%;
+    --input: 120 15% 90%;
+    --ring: 150 80% 25%;
+
+    --radius: 0.75rem;
+
+    /* Food-tech gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(28 85% 45%) 0%, hsl(32 75% 55%) 50%, hsl(15 80% 70%) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(45 25% 98%) 0%, hsl(42 35% 93%) 100%);
+    --gradient-nature: linear-gradient(45deg, hsl(28 85% 45%) 0%, hsl(120 40% 70%) 100%);
+    --gradient-sustainable: linear-gradient(120deg, hsl(120 40% 70%) 0%, hsl(15 80% 70%) 100%);
+
+    /* Food-inspired shadows */
+    --shadow-soft: 0 4px 20px hsl(28 85% 45% / 0.15);
+    --shadow-green: 0 8px 32px hsl(120 40% 70% / 0.25);
+    --shadow-earth: 0 6px 28px hsl(25 95% 35% / 0.2);
+
+    /* Refined animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.26, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+
+  /* Removed smooth scroll behavior to prevent visible scrolling on navigation */
+
+  /* Custom utility classes */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .gradient-sustainable {
+    background: var(--gradient-sustainable);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-green {
+    box-shadow: var(--shadow-green);
+  }
+
+  .shadow-earth {
+    box-shadow: var(--shadow-earth);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Animation keyframes */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+  }
+
+  /* Eco-friendly themed animations */
+  .leaf-wave {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .earth-pulse {
+    animation: scale-in 2s ease-in-out infinite alternate;
+  }
+}
