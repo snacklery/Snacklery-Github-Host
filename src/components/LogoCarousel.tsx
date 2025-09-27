@@ -1,6 +1,9 @@
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const LogoCarousel = () => {
+  const isMobile = useIsMobile();
+  
   const partners = [
     {
       name: "Cradle - Mentor, Nurture, Grow",
@@ -20,27 +23,62 @@ const LogoCarousel = () => {
     }
   ];
 
-  // Create exactly 3 copies for seamless 33.333% animation
-  const allPartners = [...partners, ...partners, ...partners];
+  // Create multiple copies for seamless animation - more copies on mobile for better visibility
+  const copies = isMobile ? 4 : 3;
+  const allPartners = Array.from({ length: copies }, () => partners).flat();
 
   return (
     <div className="overflow-hidden">
-      <div className="flex animate-scroll-left space-x-8">
+      {/* Mobile: Show all logos in a grid first, then carousel */}
+      {isMobile && (
+        <div className="grid grid-cols-2 gap-4 mb-8 px-4">
+          {partners.map((partner, index) => {
+            const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
+            return (
+              <div
+                key={`static-${index}`}
+                className="flex items-center justify-center p-3 bg-white rounded-lg shadow-sm h-24"
+                title={partner.name}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className={`object-contain ${
+                    isBadrukaLogo 
+                      ? "max-h-20 max-w-full scale-110" 
+                      : "max-h-16 max-w-full"
+                  }`}
+                  loading="lazy"
+                  onError={(e) => {
+                    console.warn(`Failed to load image: ${partner.logo}`);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
+      
+      {/* Carousel animation */}
+      <div className={`flex ${isMobile ? 'animate-scroll-left-mobile' : 'animate-scroll-left'} ${isMobile ? 'space-x-4' : 'space-x-8'}`}>
         {allPartners.map((partner, index) => {
           const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
           return (
             <div
               key={index}
-              className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
+              className={`flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow ${
+                isMobile ? 'w-32 h-20' : 'w-48 h-32'
+              }`}
               title={partner.name}
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
                 className={`object-contain transition-transform hover:scale-105 ${
-                  isBadrukaLogo 
-                    ? "max-h-28 max-w-48 scale-110" 
-                    : "max-h-24 max-w-44"
+                  isMobile 
+                    ? (isBadrukaLogo ? "max-h-16 max-w-full scale-110" : "max-h-12 max-w-full")
+                    : (isBadrukaLogo ? "max-h-28 max-w-48 scale-110" : "max-h-24 max-w-44")
                 }`}
                 loading="lazy"
                 onError={(e) => {

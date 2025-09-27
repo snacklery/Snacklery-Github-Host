@@ -228,4 +228,18 @@
   .earth-pulse {
     animation: scale-in 2s ease-in-out infinite alternate;
   }
+
+  /* Carousel improvements */
+  .animate-scroll-left:hover,
+  .animate-scroll-left-mobile:hover {
+    animation-play-state: paused;
+  }
+
+  /* Better mobile touch scrolling */
+  @media (max-width: 768px) {
+    .carousel-container {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+  }
 }
