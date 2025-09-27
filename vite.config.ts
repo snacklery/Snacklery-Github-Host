@@ -6,10 +6,11 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./",
+  base: "/",
   build: {
     assetsDir: "assets",
     emptyOutDir: true,
+    outDir: "dist",
     rollupOptions: {
       output: {
         manualChunks: undefined
@@ -17,8 +18,12 @@ export default defineConfig(({ mode }) => ({
     }
   },
   server: {
-    host: "::",
-    port: 8080,
+    host: "0.0.0.0",
+    port: parseInt(process.env.PORT as string) || 8080,
+  },
+  preview: {
+    host: "0.0.0.0",
+    port: parseInt(process.env.PORT as string) || 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
