@@ -33,11 +33,36 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Add MIME type headers
+      - name: Add MIME type headers and configuration
         run: |
-          echo "AddType text/javascript .js" > ./dist/.htaccess
-          echo "AddType application/json .json" >> ./dist/.htaccess
-          echo "AddType image/x-icon .ico" >> ./dist/.htaccess
+          cat > ./dist/.htaccess << 'EOF'
+          # MIME Types for proper serving
+          AddType text/javascript .js
+          AddType application/javascript .js
+          AddType text/javascript .mjs
+          AddType application/json .json
+          AddType image/x-icon .ico
+          AddType image/vnd.microsoft.icon .ico
+          AddType text/css .css
+          AddType image/svg+xml .svg
+          
+          # Enable CORS for fonts and assets
+          <FilesMatch "\.(ttf|otf|eot|woff|woff2|svg|js|css|json|ico)$">
+            Header set Access-Control-Allow-Origin "*"
+          </FilesMatch>
+          
+          # Force HTTPS redirect
+          RewriteEngine On
+          RewriteCond %{HTTPS} off
+          RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+          
+          # Handle SPA routing
+          RewriteEngine On
+          RewriteRule ^index\.html$ - [L]
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteRule . /index.html [L]
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
