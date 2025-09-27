@@ -4,17 +4,17 @@
   "description": "Revolutionary edible cutlery that doubles as food and drink. Sustainable, delicious, and eco-friendly alternatives to plastic cutlery.",
   "icons": [
     {
-      "src": "/images/snacklery-logo.jpeg",
+      "src": "/Snacklery-Github-Host/images/snacklery-logo.jpeg",
       "sizes": "192x192",
       "type": "image/jpeg"
     },
     {
-      "src": "/images/snacklery-logo.jpeg", 
+      "src": "/Snacklery-Github-Host/images/snacklery-logo.jpeg", 
       "sizes": "512x512",
       "type": "image/jpeg"
     }
   ],
-  "start_url": "/",
+  "start_url": "/Snacklery-Github-Host/",
   "display": "standalone",
   "theme_color": "#22c55e",
   "background_color": "#ffffff"
