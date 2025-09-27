@@ -35,32 +35,19 @@ const Header = ({ onContactClick }: HeaderProps) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => {
-              if (item.name === "Contact" && onContactClick) {
-                return (
-                  <button
-                    key={item.name}
-                    onClick={onContactClick}
-                    className="text-sm font-medium transition-smooth hover:text-primary text-muted-foreground hover:text-foreground"
-                  >
-                    {item.name}
-                  </button>
-                );
-              }
-              return (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`text-sm font-medium transition-smooth hover:text-primary ${
-                    isActive(item.href)
-                      ? "text-primary border-b-2 border-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-medium transition-smooth hover:text-primary ${
+                  isActive(item.href)
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA Button */}
@@ -91,36 +78,20 @@ const Header = ({ onContactClick }: HeaderProps) => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card rounded-lg mt-2 shadow-soft animate-fade-in-up">
-              {navigation.map((item) => {
-                if (item.name === "Contact" && onContactClick) {
-                  return (
-                    <button
-                      key={item.name}
-                      onClick={() => {
-                        onContactClick();
-                        setIsMenuOpen(false);
-                      }}
-                      className="block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-smooth text-muted-foreground hover:text-foreground hover:bg-accent"
-                    >
-                      {item.name}
-                    </button>
-                  );
-                }
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-3 py-2 text-base font-medium rounded-md transition-smooth ${
-                      isActive(item.href)
-                        ? "text-primary bg-accent"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block px-3 py-2 text-base font-medium rounded-md transition-smooth ${
+                    isActive(item.href)
+                      ? "text-primary bg-accent"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
               <div className="px-3 py-2">
                 <WhatsAppButton 
                   message="Hi! I'm interested in getting started with Snacklery's edible cutlery products. Can you help me?"

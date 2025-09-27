@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import {const Home = () => {on } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Leaf, Utensils, Recycle, Globe, Award, Trophy, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";

@@ -11,6 +11,7 @@ interface WhatsAppButtonProps {
   variant?: "default" | "outline" | "hero" | "sustainable";
   size?: "sm" | "lg" | "xl";
   isFloating?: boolean;
+  onContactClick?: () => void;
 }
 
 const WhatsAppButton = ({ 
@@ -19,7 +20,8 @@ const WhatsAppButton = ({
   children,
   variant = "default",
   size = "lg",
-  isFloating = false
+  isFloating = false,
+  onContactClick
 }: WhatsAppButtonProps) => {
   const isMobile = useIsMobile();
   const phoneNumber = "918985985974"; // WhatsApp number without + and spaces
@@ -49,12 +51,12 @@ const WhatsAppButton = ({
               {React.createElement(contactIcon, { className: "h-8 w-8" })}
             </a>
           ) : (
-            <Link
-              to={contactPageUrl}
+            <button
+              onClick={onContactClick}
               aria-label={contactLabel}
             >
               {React.createElement(contactIcon, { className: "h-8 w-8" })}
-            </Link>
+            </button>
           )}
         </Button>
       </div>

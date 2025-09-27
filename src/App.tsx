@@ -51,7 +51,7 @@ const App = () => {
               </Routes>
             </main>
             <Footer />
-            <WhatsAppButton isFloating={true} />
+            <WhatsAppButton isFloating={true} onContactClick={openModal} />
             <ContactModal isOpen={isOpen} onClose={closeModal} />
           </div>
         </BrowserRouter>

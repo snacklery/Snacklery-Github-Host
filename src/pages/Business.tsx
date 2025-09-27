@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import const Business = () => {d, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Building, Users, Truck, HeadphonesIcon, TrendingUp, Award, Plane, MapPin, PartyPopper } from "lucide-react";
