@@ -13,6 +13,10 @@ const LogoCarousel = () => {
     {
       name: "CFTRI - Central Food Technological Research Institute",
       logo: "/lovable-uploads/0e3f4199-9f88-4b9e-9184-6860cd48244c.png"
+    },
+    {
+      name: "Badruka College of Commerce & Arts - Entrepreneurship Development Cell",
+      logo: "/images/badruka-college-logo.png"
     }
   ];
 
@@ -22,12 +26,18 @@ const LogoCarousel = () => {
         {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
+            className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
+            title={partner.name}
           >
             <img
               src={partner.logo}
               alt={partner.name}
-              className="max-h-20 max-w-full object-contain"
+              className="max-h-24 max-w-44 object-contain transition-transform hover:scale-105"
+              loading="lazy"
+              onError={(e) => {
+                console.warn(`Failed to load image: ${partner.logo}`);
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
         ))}

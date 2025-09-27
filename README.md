@@ -40,7 +40,6 @@ npm run dev
 - `npm run build` - Build the project for production
 - `npm run preview` - Preview the production build locally
 - `npm run lint` - Run ESLint to check code quality
-- `npm start` - Start the production server (used by Render)
 
 ### Development Workflow
 
