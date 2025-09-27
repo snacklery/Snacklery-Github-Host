@@ -1,0 +1,21 @@
+{
+  "name": "Snacklery - Edible Cutlery Revolution",
+  "short_name": "Snacklery",
+  "description": "Revolutionary edible cutlery that doubles as food and drink. Sustainable, delicious, and eco-friendly alternatives to plastic cutlery.",
+  "icons": [
+    {
+      "src": "/images/vanilla-spoon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/vanilla-spoon.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#22c55e",
+  "background_color": "#ffffff"
+}
