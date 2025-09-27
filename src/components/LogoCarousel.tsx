@@ -16,7 +16,7 @@ const LogoCarousel = () => {
     },
     {
       name: "Badruka College of Commerce & Arts - Entrepreneurship Development Cell",
-      logo: "/images/badruka-college-logo.png"
+      logo: "/images/badruka-college-logo.jpg"
     }
   ];
 
