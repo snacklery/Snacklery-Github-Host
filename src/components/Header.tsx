@@ -29,7 +29,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 transition-smooth hover:scale-105">
-            <img src="/images/snacklery-logo.jpeg" alt="Snacklery" className="h-10 w-10" />
+            <img src="/images/snacklery-logo.svg" alt="Snacklery" className="h-10 w-10" />
             <span className="text-xl font-bold text-primary">Snacklery</span>
           </Link>
 

@@ -9,14 +9,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/images/snacklery-logo.jpeg",
+      "src": "/images/snacklery-logo.svg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/svg+xml"
     },
     {
-      "src": "/images/snacklery-logo.jpeg",
+      "src": "/images/snacklery-logo.svg",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/svg+xml"
     }
   ],
   "start_url": "/",

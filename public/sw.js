@@ -4,7 +4,7 @@ const urlsToCache = [
   '/',
   '/manifest.json',
   '/favicon.ico',
-  '/images/snacklery-logo.jpeg'
+  '/images/snacklery-logo.svg'
 ];
 
 self.addEventListener('install', function(event) {

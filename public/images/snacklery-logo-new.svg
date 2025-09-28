@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-bg { fill: #2d5016; }
+      .logo-text { fill: #ffffff; font-family: Arial, sans-serif; font-weight: bold; }
+    </style>
+  </defs>
+  <rect width="512" height="512" rx="128" ry="128" class="logo-bg"/>
+  <text x="256" y="350" font-size="320" text-anchor="middle" class="logo-text">S</text>
+</svg>
