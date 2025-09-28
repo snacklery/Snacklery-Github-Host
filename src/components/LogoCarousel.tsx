@@ -86,23 +86,49 @@ const LogoCarousel = () => {
   const copies = 4;
   const allPartners = Array.from({ length: copies }, () => partners).flat();
 
-  // Mobile: Clean swipe-only carousel with auto-advance
+  // Mobile: Interactive carousel with arrows, swipe, and auto-advance
   if (isMobile) {
     const currentPartner = partners[activeIndex];
     
     return (
       <div className="w-full">
-        {/* Main carousel area - swipe only, no arrows */}
+        {/* Main carousel area with arrows */}
         <div 
           className="relative bg-primary/10 backdrop-blur-sm rounded-3xl p-8 mb-4 border border-primary/20"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Logo and text together - synchronized */}
-          <div className="flex flex-col items-center justify-center space-y-4">
+          {/* Navigation arrows */}
+          <button
+            onClick={() => {
+              stopAutoPlay();
+              goToPrev();
+              resumeAutoPlay();
+            }}
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/95 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+            aria-label="Previous partner"
+          >
+            <ChevronLeft className="w-5 h-5 text-green-600" />
+          </button>
+          
+          <button
+            onClick={() => {
+              stopAutoPlay();
+              goToNext();
+              resumeAutoPlay();
+            }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/95 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+            aria-label="Next partner"
+          >
+            <ChevronRight className="w-5 h-5 text-green-600" />
+          </button>
+
+          {/* Logo and text together - perfectly synchronized */}
+          <div className="flex flex-col items-center justify-center space-y-4 px-12">
             <div className="flex items-center justify-center h-32">
               <img
+                key={`logo-${activeIndex}`}
                 src={currentPartner.logo}
                 alt={currentPartner.name}
                 className="object-contain h-28 w-full transition-all duration-300"
@@ -114,7 +140,7 @@ const LogoCarousel = () => {
               />
             </div>
             
-            <div className="text-center text-sm text-gray-700 leading-tight font-medium">
+            <div key={`text-${activeIndex}`} className="text-center text-sm text-gray-700 leading-tight font-medium">
               <div>{currentPartner.name}</div>
               {currentPartner.location && (
                 <div className="text-xs text-gray-600 mt-1">{currentPartner.location}</div>
