@@ -47,22 +47,20 @@ const LogoCarousel = () => {
 
   // Navigation functions with guaranteed circular logic
   const goToNext = useCallback(() => {
-    console.log('Next clicked, current:', activeIndex);
     setActiveIndex((current) => {
-      const next = current === totalPartners - 1 ? 0 : current + 1;
-      console.log('Moving from', current, 'to', next);
+      const next = current >= totalPartners - 1 ? 0 : current + 1;
+      console.log('Next: Moving from', current, 'to', next);
       return next;
     });
-  }, [activeIndex, totalPartners]);
+  }, [totalPartners]);
 
   const goToPrev = useCallback(() => {
-    console.log('Prev clicked, current:', activeIndex);
     setActiveIndex((current) => {
-      const prev = current === 0 ? totalPartners - 1 : current - 1;
-      console.log('Moving from', current, 'to', prev);
+      const prev = current <= 0 ? totalPartners - 1 : current - 1;
+      console.log('Prev: Moving from', current, 'to', prev);
       return prev;
     });
-  }, [activeIndex, totalPartners]);
+  }, [totalPartners]);
 
   // Stop auto-play function
   const stopAutoPlay = useCallback(() => {
@@ -177,10 +175,10 @@ const LogoCarousel = () => {
               />
             </div>
             
-            <div key={`text-${activeIndex}`} className="text-center text-sm text-gray-700 leading-tight font-medium">
-              <div>{currentPartner.name}</div>
+            <div key={`text-${activeIndex}`} className="text-center text-sm text-gray-700 leading-tight font-medium h-12 flex flex-col justify-center">
+              <div className="line-clamp-1">{currentPartner.name}</div>
               {currentPartner.location && (
-                <div className="text-xs text-gray-600 mt-1">{currentPartner.location}</div>
+                <div className="text-xs text-gray-600 mt-1 line-clamp-1">{currentPartner.location}</div>
               )}
             </div>
           </div>
