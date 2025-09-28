@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/lovable-uploads/9d66dc37-f786-40f9-9fc8-f73cf550b6eb.png" alt="Snacklery" className="h-12 w-12" />
+              <img src="/images/snacklery-logo.png" alt="Snacklery" className="h-12 w-12" />
               <span className="text-2xl font-bold">Snacklery</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 max-w-md">
