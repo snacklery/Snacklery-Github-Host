@@ -23,14 +23,14 @@ const LogoCarousel = () => {
     }
   ];
 
-  // Create multiple copies for seamless animation - more copies for better continuous flow
-  const copies = isMobile ? 5 : 3;
+  // Create exactly 4 copies for 4 logos - seamless 25% animation cycle
+  const copies = 4;
   const allPartners = Array.from({ length: copies }, () => partners).flat();
 
   return (
     <div className="overflow-hidden">
       {/* Fast moving carousel for all devices */}
-      <div className={`flex ${isMobile ? 'animate-scroll-left' : 'animate-scroll-left'} ${isMobile ? 'space-x-6' : 'space-x-8'}`}>
+      <div className="flex animate-scroll-left space-x-8">
         {allPartners.map((partner, index) => {
           const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
           return (
