@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -9,6 +9,7 @@ const LogoCarousel = () => {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const partners: Array<{name: string; location?: string; logo: string}> = [
     {
@@ -30,57 +31,99 @@ const LogoCarousel = () => {
     }
   ];
 
-  // Auto-advance every 3 seconds
-  useEffect(() => {
-    if (isAutoPlaying && isMobile) {
-      autoPlayRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % partners.length);
-      }, 3000);
-    }
-    
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
-      }
-    };
-  }, [isAutoPlaying, isMobile, partners.length]);
+  const totalPartners = partners.length; // 4 partners
 
-  const stopAutoPlay = () => {
-    setIsAutoPlaying(false);
+  // Clean up function
+  const cleanupTimers = useCallback(() => {
     if (autoPlayRef.current) {
       clearInterval(autoPlayRef.current);
       autoPlayRef.current = null;
     }
-  };
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = null;
+    }
+  }, []);
 
-  const resumeAutoPlay = () => {
-    setTimeout(() => setIsAutoPlaying(true), 5000);
-  };
+  // Navigation functions with guaranteed circular logic
+  const goToNext = useCallback(() => {
+    console.log('Next clicked, current:', activeIndex);
+    setActiveIndex((current) => {
+      const next = current === totalPartners - 1 ? 0 : current + 1;
+      console.log('Moving from', current, 'to', next);
+      return next;
+    });
+  }, [activeIndex, totalPartners]);
 
-  const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % partners.length);
-  };
+  const goToPrev = useCallback(() => {
+    console.log('Prev clicked, current:', activeIndex);
+    setActiveIndex((current) => {
+      const prev = current === 0 ? totalPartners - 1 : current - 1;
+      console.log('Moving from', current, 'to', prev);
+      return prev;
+    });
+  }, [activeIndex, totalPartners]);
 
-  const goToPrev = () => {
-    setActiveIndex((prev) => (prev - 1 + partners.length) % partners.length);
-  };
+  // Stop auto-play function
+  const stopAutoPlay = useCallback(() => {
+    cleanupTimers();
+    setIsAutoPlaying(false);
+  }, [cleanupTimers]);
+
+  // Resume auto-play function
+  const resumeAutoPlay = useCallback(() => {
+    cleanupTimers();
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 5000);
+  }, [cleanupTimers]);
+
+  // Auto-advance every 3 seconds
+  useEffect(() => {
+    if (isAutoPlaying && isMobile) {
+      autoPlayRef.current = setInterval(() => {
+        goToNext();
+      }, 3000);
+    }
+    
+    return cleanupTimers;
+  }, [isAutoPlaying, isMobile, goToNext, cleanupTimers]);
+
+  // Button click handlers
+  const handlePrevClick = useCallback(() => {
+    stopAutoPlay();
+    goToPrev();
+    resumeAutoPlay();
+  }, [stopAutoPlay, goToPrev, resumeAutoPlay]);
+
+  const handleNextClick = useCallback(() => {
+    stopAutoPlay();
+    goToNext();
+    resumeAutoPlay();
+  }, [stopAutoPlay, goToNext, resumeAutoPlay]);
 
   // Touch/swipe handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
-  };
+  }, []);
 
-  const handleTouchMove = (e: React.TouchEvent) => {
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
     touchEndX.current = e.touches[0].clientX;
-  };
+  }, []);
 
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      goToNext(); // Swipe left -> next
-    } else if (touchEndX.current - touchStartX.current > 50) {
-      goToPrev(); // Swipe right -> previous
+  const handleTouchEnd = useCallback(() => {
+    const deltaX = touchStartX.current - touchEndX.current;
+    
+    if (Math.abs(deltaX) > 50) { // Minimum swipe distance
+      if (deltaX > 0) {
+        // Swiped left -> go to next
+        handleNextClick();
+      } else {
+        // Swiped right -> go to previous  
+        handlePrevClick();
+      }
     }
-  };
+  }, [handleNextClick, handlePrevClick]);
 
   // Create exactly 4 copies for 4 logos - seamless 25% animation cycle
   const copies = 4;
@@ -101,27 +144,21 @@ const LogoCarousel = () => {
         >
           {/* Large, visible navigation arrows for mobile */}
           <button
-            onClick={() => {
-              stopAutoPlay();
-              goToPrev();
-              resumeAutoPlay();
-            }}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200"
+            type="button"
+            onClick={handlePrevClick}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200 select-none"
             aria-label="Previous partner"
           >
-            <ChevronLeft className="w-6 h-6 text-green-600 font-bold" />
+            <ChevronLeft className="w-6 h-6 text-green-600 font-bold pointer-events-none" />
           </button>
           
           <button
-            onClick={() => {
-              stopAutoPlay();
-              goToNext();
-              resumeAutoPlay();
-            }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200"
+            type="button"
+            onClick={handleNextClick}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200 select-none"
             aria-label="Next partner"
           >
-            <ChevronRight className="w-6 h-6 text-green-600 font-bold" />
+            <ChevronRight className="w-6 h-6 text-green-600 font-bold pointer-events-none" />
           </button>
 
           {/* Logo and text together - perfectly synchronized */}
