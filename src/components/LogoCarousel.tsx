@@ -10,9 +10,10 @@ const LogoCarousel = () => {
   const touchEndX = useRef(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
   
-  const partners = [
+  const partners: Array<{name: string; location?: string; logo: string}> = [
     {
-      name: "Cradle - Mentor, Nurture, Grow\nAhmedabad",
+      name: "Cradle - Mentor, Nurture, Grow",
+      location: "Ahmedabad",
       logo: "/lovable-uploads/0b60f8ed-49e0-47ec-ac38-b11eb5c765eb.png"
     },
     {
@@ -133,9 +134,12 @@ const LogoCarousel = () => {
             />
           </div>
           
-          <p className="text-center text-sm text-gray-700 mt-4 leading-tight font-medium">
-            {partners[activeIndex].name}
-          </p>
+          <div className="text-center text-sm text-gray-700 mt-4 leading-tight font-medium">
+            <div>{partners[activeIndex].name}</div>
+            {partners[activeIndex].location && (
+              <div className="text-xs text-gray-600 mt-1">{partners[activeIndex].location}</div>
+            )}
+          </div>
         </div>
       </div>
     );
