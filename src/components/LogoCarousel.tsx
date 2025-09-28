@@ -23,45 +23,14 @@ const LogoCarousel = () => {
     }
   ];
 
-  // Create multiple copies for seamless animation - more copies on mobile for better visibility
-  const copies = isMobile ? 4 : 3;
+  // Create multiple copies for seamless animation - more copies for better continuous flow
+  const copies = isMobile ? 5 : 3;
   const allPartners = Array.from({ length: copies }, () => partners).flat();
 
   return (
     <div className="overflow-hidden">
-      {/* Mobile: Show all logos in a grid first, then carousel */}
-      {isMobile && (
-        <div className="grid grid-cols-2 gap-4 mb-8 px-4">
-          {partners.map((partner, index) => {
-            const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
-            return (
-              <div
-                key={`static-${index}`}
-                className="flex items-center justify-center p-3 bg-white rounded-lg shadow-sm h-24"
-                title={partner.name}
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className={`object-contain ${
-                    isBadrukaLogo 
-                      ? "max-h-20 max-w-full scale-110" 
-                      : "max-h-16 max-w-full"
-                  }`}
-                  loading="lazy"
-                  onError={(e) => {
-                    console.warn(`Failed to load image: ${partner.logo}`);
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-      )}
-      
-      {/* Carousel animation */}
-      <div className={`flex ${isMobile ? 'animate-scroll-left-mobile' : 'animate-scroll-left'} ${isMobile ? 'space-x-4' : 'space-x-8'}`}>
+      {/* Fast moving carousel for all devices */}
+      <div className={`flex ${isMobile ? 'animate-scroll-left' : 'animate-scroll-left'} ${isMobile ? 'space-x-6' : 'space-x-8'}`}>
         {allPartners.map((partner, index) => {
           const isBadrukaLogo = partner.name.includes("Badruka College of Commerce & Arts");
           return (
