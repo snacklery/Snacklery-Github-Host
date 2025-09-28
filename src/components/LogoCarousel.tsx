@@ -132,19 +132,29 @@ const LogoCarousel = () => {
           </p>
         </div>
         
-        {/* Clean progress indicator only */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {partners.map((_, index) => (
+        {/* Logo thumbnail navigation */}
+        <div className="flex justify-center gap-3 mt-4">
+          {partners.map((partner, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`relative w-16 h-16 bg-primary/10 backdrop-blur-sm rounded-2xl border transition-all duration-300 flex items-center justify-center overflow-hidden ${
                 activeIndex === index 
-                  ? 'w-8 bg-gradient-to-r from-green-500 to-green-600 shadow-md' 
-                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  ? 'border-primary/40 shadow-lg scale-105 bg-primary/15' 
+                  : 'border-primary/20 hover:border-primary/30 hover:bg-primary/12'
               }`}
-              aria-label={`Go to partner ${index + 1}`}
-            />
+              title={partner.name}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="w-10 h-10 object-contain transition-all duration-300"
+                style={{
+                  filter: activeIndex === index ? 'none' : 'brightness(0.8) opacity(0.9)'
+                }}
+                loading="lazy"
+              />
+            </button>
           ))}
         </div>
       </div>
