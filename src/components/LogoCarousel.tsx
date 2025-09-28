@@ -25,7 +25,7 @@ const LogoCarousel = () => {
     },
     {
       name: "Badruka College of Commerce & Arts - Entrepreneurship Development Cell",
-      logo: "/images/badruka-college-logo.jpg"
+      logo: "/images/badruka-college-logo-removebg-preview.png"
     }
   ];
 
@@ -116,9 +116,7 @@ const LogoCarousel = () => {
             <img
               src={partners[activeIndex].logo}
               alt={partners[activeIndex].name}
-              className={`object-contain max-h-20 max-w-full transition-all duration-300 ${
-                partners[activeIndex].name.includes("Badruka College of Commerce & Arts") ? "scale-110" : ""
-              }`}
+              className="object-contain max-h-20 max-w-full transition-all duration-300"
               loading="lazy"
               onError={(e) => {
                 console.warn(`Failed to load image: ${partners[activeIndex].logo}`);
@@ -130,32 +128,6 @@ const LogoCarousel = () => {
           <p className="text-center text-sm text-gray-700 mt-4 leading-tight font-medium">
             {partners[activeIndex].name}
           </p>
-        </div>
-        
-        {/* Logo thumbnail navigation */}
-        <div className="flex justify-center gap-3 mt-4">
-          {partners.map((partner, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative w-16 h-16 bg-primary/10 backdrop-blur-sm rounded-2xl border transition-all duration-300 flex items-center justify-center overflow-hidden ${
-                activeIndex === index 
-                  ? 'border-primary/40 shadow-lg scale-105 bg-primary/15' 
-                  : 'border-primary/20 hover:border-primary/30 hover:bg-primary/12'
-              }`}
-              title={partner.name}
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="w-10 h-10 object-contain transition-all duration-300"
-                style={{
-                  filter: activeIndex === index ? 'none' : 'brightness(0.8) opacity(0.9)'
-                }}
-                loading="lazy"
-              />
-            </button>
-          ))}
         </div>
       </div>
     );
@@ -176,9 +148,7 @@ const LogoCarousel = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`object-contain transition-transform hover:scale-105 ${
-                  isBadrukaLogo ? "max-h-28 max-w-48 scale-110" : "max-h-24 max-w-44"
-                }`}
+                className="object-contain transition-transform hover:scale-105 max-h-24 max-w-44"
                 loading="lazy"
                 onError={(e) => {
                   console.warn(`Failed to load image: ${partner.logo}`);
