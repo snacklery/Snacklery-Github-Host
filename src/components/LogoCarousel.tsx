@@ -45,56 +45,42 @@ const LogoCarousel = () => {
     };
   }, [isAutoPlaying, isMobile, partners.length]);
 
-  const goToNext = () => {
-    // Immediately stop auto-play and clear any pending intervals
+  const stopAutoPlay = () => {
     setIsAutoPlaying(false);
     if (autoPlayRef.current) {
       clearInterval(autoPlayRef.current);
       autoPlayRef.current = null;
     }
-    
-    console.log(`Next clicked, current index: ${activeIndex}`);
+  };
+
+  const resumeAutoPlay = () => {
+    setTimeout(() => setIsAutoPlaying(true), 5000);
+  };
+
+  const goToNext = () => {
+    stopAutoPlay();
     setActiveIndex((prev) => {
-      const newIndex = (prev + 1) % partners.length;
-      console.log(`Going next: ${prev} -> ${newIndex} (total partners: ${partners.length})`);
+      const newIndex = prev >= partners.length - 1 ? 0 : prev + 1;
+      console.log(`Going next: ${prev} -> ${newIndex}`);
       return newIndex;
     });
-    
-    // Resume auto-play after 5 seconds
-    setTimeout(() => setIsAutoPlaying(true), 5000);
+    resumeAutoPlay();
   };
 
   const goToPrev = () => {
-    // Immediately stop auto-play and clear any pending intervals
-    setIsAutoPlaying(false);
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      autoPlayRef.current = null;
-    }
-    
-    console.log(`Prev clicked, current index: ${activeIndex}`);
+    stopAutoPlay();
     setActiveIndex((prev) => {
-      const newIndex = prev === 0 ? partners.length - 1 : prev - 1;
-      console.log(`Going prev: ${prev} -> ${newIndex} (total partners: ${partners.length})`);
+      const newIndex = prev <= 0 ? partners.length - 1 : prev - 1;
+      console.log(`Going prev: ${prev} -> ${newIndex}`);
       return newIndex;
     });
-    
-    // Resume auto-play after 5 seconds
-    setTimeout(() => setIsAutoPlaying(true), 5000);
+    resumeAutoPlay();
   };
 
   const goToSlide = (index: number) => {
-    // Immediately stop auto-play and clear any pending intervals
-    setIsAutoPlaying(false);
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      autoPlayRef.current = null;
-    }
-    
+    stopAutoPlay();
     setActiveIndex(index);
-    
-    // Resume auto-play after 5 seconds
-    setTimeout(() => setIsAutoPlaying(true), 5000);
+    resumeAutoPlay();
   };
 
   // Touch/swipe handlers
@@ -165,8 +151,6 @@ const LogoCarousel = () => {
             {partners[activeIndex].location && (
               <div className="text-xs text-gray-600 mt-1">{partners[activeIndex].location}</div>
             )}
-            {/* Debug info */}
-            <div className="text-xs text-red-500 mt-2">Debug: Index {activeIndex} of {partners.length}</div>
           </div>
         </div>
       </div>
