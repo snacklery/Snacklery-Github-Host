@@ -83,13 +83,13 @@ const LogoCarousel = () => {
   const copies = 4;
   const allPartners = Array.from({ length: copies }, () => partners).flat();
 
-  // Mobile: Interactive carousel with thumbnails, arrows, swipe, auto-advance
+  // Mobile: Interactive carousel with themed background, arrows, swipe, auto-advance
   if (isMobile) {
     return (
       <div className="w-full">
         {/* Main carousel area */}
         <div 
-          className="relative bg-white rounded-lg shadow-sm p-6 mb-4"
+          className="relative bg-primary/10 backdrop-blur-sm rounded-3xl p-6 mb-4 border border-primary/20"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -97,18 +97,18 @@ const LogoCarousel = () => {
           {/* Navigation arrows */}
           <button
             onClick={goToPrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition-colors"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/90 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             aria-label="Previous partner"
           >
-            <ChevronLeft className="w-4 h-4 text-gray-600" />
+            <ChevronLeft className="w-5 h-5 text-green-600" />
           </button>
           
           <button
             onClick={goToNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition-colors"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/90 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             aria-label="Next partner"
           >
-            <ChevronRight className="w-4 h-4 text-gray-600" />
+            <ChevronRight className="w-5 h-5 text-green-600" />
           </button>
 
           {/* Logo display */}
@@ -127,44 +127,23 @@ const LogoCarousel = () => {
             />
           </div>
           
-          <p className="text-center text-sm text-gray-600 mt-3 leading-tight">
+          <p className="text-center text-sm text-gray-700 mt-4 leading-tight font-medium">
             {partners[activeIndex].name}
           </p>
         </div>
-
-        {/* Logo thumbnails as navigation */}
-        <div className="flex justify-center space-x-2">
-          {partners.map((partner, index) => (
+        
+        {/* Clean progress indicator only */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {partners.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`p-2 rounded-lg border-2 transition-all duration-300 ${
-                activeIndex === index
-                  ? 'border-green-500 bg-green-50'
-                  : 'border-gray-200 bg-white hover:border-gray-300'
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? 'w-8 bg-gradient-to-r from-green-500 to-green-600 shadow-md' 
+                  : 'w-2 bg-gray-300 hover:bg-gray-400'
               }`}
-              title={partner.name}
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className={`w-8 h-8 object-contain ${
-                  partner.name.includes("Badruka College of Commerce & Arts") ? "scale-110" : ""
-                }`}
-                loading="lazy"
-              />
-            </button>
-          ))}
-        </div>
-        
-        {/* Progress indicator */}
-        <div className="flex justify-center mt-3 space-x-1">
-          {partners.map((_, index) => (
-            <div
-              key={index}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                activeIndex === index ? 'w-8 bg-green-500' : 'w-2 bg-gray-300'
-              }`}
+              aria-label={`Go to partner ${index + 1}`}
             />
           ))}
         </div>
