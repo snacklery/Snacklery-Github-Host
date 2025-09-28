@@ -45,13 +45,21 @@ const LogoCarousel = () => {
   }, [isAutoPlaying, isMobile, partners.length]);
 
   const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % partners.length);
+    setActiveIndex((prev) => {
+      const newIndex = (prev + 1) % partners.length;
+      console.log(`Going next: ${prev} -> ${newIndex}`);
+      return newIndex;
+    });
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 5000); // Resume auto-play after 5s
   };
 
   const goToPrev = () => {
-    setActiveIndex((prev) => (prev - 1 + partners.length) % partners.length);
+    setActiveIndex((prev) => {
+      const newIndex = prev === 0 ? partners.length - 1 : prev - 1;
+      console.log(`Going prev: ${prev} -> ${newIndex}`);
+      return newIndex;
+    });
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 5000); // Resume auto-play after 5s
   };
