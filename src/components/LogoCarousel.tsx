@@ -99,17 +99,17 @@ const LogoCarousel = () => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Navigation arrows */}
+          {/* Large, visible navigation arrows for mobile */}
           <button
             onClick={() => {
               stopAutoPlay();
               goToPrev();
               resumeAutoPlay();
             }}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/95 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200"
             aria-label="Previous partner"
           >
-            <ChevronLeft className="w-5 h-5 text-green-600" />
+            <ChevronLeft className="w-6 h-6 text-green-600 font-bold" />
           </button>
           
           <button
@@ -118,10 +118,10 @@ const LogoCarousel = () => {
               goToNext();
               resumeAutoPlay();
             }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/95 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-4 w-12 h-12 bg-white border-2 border-green-500 rounded-full shadow-xl flex items-center justify-center active:bg-green-50 active:scale-90 transition-all duration-200"
             aria-label="Next partner"
           >
-            <ChevronRight className="w-5 h-5 text-green-600" />
+            <ChevronRight className="w-6 h-6 text-green-600 font-bold" />
           </button>
 
           {/* Logo and text together - perfectly synchronized */}
