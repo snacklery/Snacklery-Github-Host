@@ -123,9 +123,9 @@ const LogoCarousel = () => {
               />
             </div>
             
-            <div className="text-center text-gray-700 leading-tight font-medium h-12 flex flex-col justify-center">
-              <div className="text-sm">{currentPartner.line1}</div>
-              <div className="text-xs text-gray-600">{currentPartner.line2}</div>
+            <div className="text-center text-gray-700 leading-relaxed font-medium h-20 w-full max-w-xs mx-auto flex flex-col justify-center px-2">
+              <div className="text-base font-semibold">{currentPartner.line1}</div>
+              <div className="text-sm text-gray-600 mt-1">{currentPartner.line2}</div>
             </div>
           </div>
         </div>
