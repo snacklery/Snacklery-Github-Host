@@ -58,29 +58,11 @@ const LogoCarousel = () => {
   };
 
   const goToNext = () => {
-    stopAutoPlay();
-    setActiveIndex((prev) => {
-      const newIndex = prev >= partners.length - 1 ? 0 : prev + 1;
-      console.log(`Going next: ${prev} -> ${newIndex}`);
-      return newIndex;
-    });
-    resumeAutoPlay();
+    setActiveIndex((prev) => (prev + 1) % partners.length);
   };
 
   const goToPrev = () => {
-    stopAutoPlay();
-    setActiveIndex((prev) => {
-      const newIndex = prev <= 0 ? partners.length - 1 : prev - 1;
-      console.log(`Going prev: ${prev} -> ${newIndex}`);
-      return newIndex;
-    });
-    resumeAutoPlay();
-  };
-
-  const goToSlide = (index: number) => {
-    stopAutoPlay();
-    setActiveIndex(index);
-    resumeAutoPlay();
+    setActiveIndex((prev) => (prev - 1 + partners.length) % partners.length);
   };
 
   // Touch/swipe handlers
@@ -104,53 +86,40 @@ const LogoCarousel = () => {
   const copies = 4;
   const allPartners = Array.from({ length: copies }, () => partners).flat();
 
-  // Mobile: Interactive carousel with themed background, arrows, swipe, auto-advance
+  // Mobile: Clean swipe-only carousel with auto-advance
   if (isMobile) {
+    const currentPartner = partners[activeIndex];
+    
     return (
       <div className="w-full">
-        {/* Main carousel area */}
+        {/* Main carousel area - swipe only, no arrows */}
         <div 
-          className="relative bg-primary/10 backdrop-blur-sm rounded-3xl p-6 mb-4 border border-primary/20"
+          className="relative bg-primary/10 backdrop-blur-sm rounded-3xl p-8 mb-4 border border-primary/20"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Navigation arrows */}
-          <button
-            onClick={goToPrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/90 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            aria-label="Previous partner"
-          >
-            <ChevronLeft className="w-5 h-5 text-green-600" />
-          </button>
-          
-          <button
-            onClick={goToNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/90 hover:bg-green-50 border border-green-200/50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            aria-label="Next partner"
-          >
-            <ChevronRight className="w-5 h-5 text-green-600" />
-          </button>
-
-          {/* Logo display */}
-          <div className="flex items-center justify-center h-28 px-6">
-            <img
-              src={partners[activeIndex].logo}
-              alt={partners[activeIndex].name}
-              className="object-contain h-24 w-full transition-all duration-300"
-              loading="lazy"
-              onError={(e) => {
-                console.warn(`Failed to load image: ${partners[activeIndex].logo}`);
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
-          
-          <div className="text-center text-sm text-gray-700 mt-4 leading-tight font-medium">
-            <div>{partners[activeIndex].name}</div>
-            {partners[activeIndex].location && (
-              <div className="text-xs text-gray-600 mt-1">{partners[activeIndex].location}</div>
-            )}
+          {/* Logo and text together - synchronized */}
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <div className="flex items-center justify-center h-32">
+              <img
+                src={currentPartner.logo}
+                alt={currentPartner.name}
+                className="object-contain h-28 w-full transition-all duration-300"
+                loading="lazy"
+                onError={(e) => {
+                  console.warn(`Failed to load image: ${currentPartner.logo}`);
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+            
+            <div className="text-center text-sm text-gray-700 leading-tight font-medium">
+              <div>{currentPartner.name}</div>
+              {currentPartner.location && (
+                <div className="text-xs text-gray-600 mt-1">{currentPartner.location}</div>
+              )}
+            </div>
           </div>
         </div>
       </div>
