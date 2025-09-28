@@ -12,7 +12,7 @@ const LogoCarousel = () => {
   
   const partners = [
     {
-      name: "Cradle - Mentor, Nurture, Grow",
+      name: "Cradle - Mentor, Nurture, Grow\nAhmedabad",
       logo: "/lovable-uploads/0b60f8ed-49e0-47ec-ac38-b11eb5c765eb.png"
     },
     {
@@ -112,11 +112,11 @@ const LogoCarousel = () => {
           </button>
 
           {/* Logo display */}
-          <div className="flex items-center justify-center h-24 px-8">
+          <div className="flex items-center justify-center h-28 px-6">
             <img
               src={partners[activeIndex].logo}
               alt={partners[activeIndex].name}
-              className="object-contain max-h-20 max-w-full transition-all duration-300"
+              className="object-contain h-24 w-full transition-all duration-300"
               loading="lazy"
               onError={(e) => {
                 console.warn(`Failed to load image: ${partners[activeIndex].logo}`);
@@ -148,7 +148,7 @@ const LogoCarousel = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="object-contain transition-transform hover:scale-105 max-h-24 max-w-44"
+                className="object-contain transition-transform hover:scale-105 h-28 w-44"
                 loading="lazy"
                 onError={(e) => {
                   console.warn(`Failed to load image: ${partner.logo}`);
