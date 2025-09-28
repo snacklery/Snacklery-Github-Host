@@ -1,47 +1,88 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const LogoCarousel = () => {
   const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const partners = [
     {
-      name: "Cradle - Mentor, Nurture, Grow, Ahmedabad",
+      line1: "Cradle - Mentor, Nurture, Grow",
+      line2: "Ahmedabad",
       logo: "/lovable-uploads/0b60f8ed-49e0-47ec-ac38-b11eb5c765eb.png"
     },
     {
-      name: "EDII - Entrepreneurship Development Institute of India", 
+      line1: "EDII",
+      line2: "Entrepreneurship Development Institute of India", 
       logo: "/lovable-uploads/a50a67ad-eec7-4428-9468-c8c5da3e510f.png"
     },
     {
-      name: "CFTRI - Central Food Technological Research Institute",
+      line1: "CFTRI",
+      line2: "Central Food Technologica Research Institute",
       logo: "/lovable-uploads/0e3f4199-9f88-4b9e-9184-6860cd48244c.png"
     },
     {
-      name: "Badruka College of Commerce & Arts - Entrepreneurship Development Cell",
+      line1: "Badruka College of Commerce & Arts",
+      line2: "Entrepreneurship Development Cell",
       logo: "/images/badruka-college-logo-removebg-preview.png"
     }
   ];
 
-  // Auto-advance every 3 seconds for mobile
+  // Smart auto-advance: runs when isAutoPlaying is true
   useEffect(() => {
-    if (isMobile) {
-      const interval = setInterval(() => {
+    if (isAutoPlaying && isMobile) {
+      autoPlayRef.current = setInterval(() => {
         setActiveIndex((prev) => (prev + 1) % partners.length);
       }, 3000);
-      return () => clearInterval(interval);
+    } else {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+        autoPlayRef.current = null;
+      }
     }
-  }, [isMobile, partners.length]);
 
-  // Simple navigation - guaranteed to work
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isAutoPlaying, isMobile, partners.length]);
+
+  // Navigation with smart pause/resume
   const goNext = () => {
+    // Stop automation immediately
+    setIsAutoPlaying(false);
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    
+    // Navigate
     setActiveIndex((prev) => prev === partners.length - 1 ? 0 : prev + 1);
+    
+    // Resume automation after 5 seconds
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 5000);
   };
 
   const goPrev = () => {
+    // Stop automation immediately  
+    setIsAutoPlaying(false);
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    
+    // Navigate
     setActiveIndex((prev) => prev === 0 ? partners.length - 1 : prev - 1);
+    
+    // Resume automation after 5 seconds
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 5000);
   };
 
 
@@ -76,14 +117,15 @@ const LogoCarousel = () => {
             <div className="flex items-center justify-center h-32">
               <img
                 src={currentPartner.logo}
-                alt={currentPartner.name}
+                alt={`${currentPartner.line1} ${currentPartner.line2}`}
                 className="object-contain h-28 w-full transition-all duration-300"
                 loading="lazy"
               />
             </div>
             
-            <div className="text-center text-sm text-gray-700 leading-tight font-medium min-h-[3rem] flex items-center justify-center">
-              <div>{currentPartner.name}</div>
+            <div className="text-center text-gray-700 leading-tight font-medium h-12 flex flex-col justify-center">
+              <div className="text-sm">{currentPartner.line1}</div>
+              <div className="text-xs text-gray-600">{currentPartner.line2}</div>
             </div>
           </div>
         </div>
@@ -102,11 +144,11 @@ const LogoCarousel = () => {
           <div
             key={index}
             className="flex-shrink-0 flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 h-32"
-            title={partner.name}
+            title={`${partner.line1} ${partner.line2}`}
           >
             <img
               src={partner.logo}
-              alt={partner.name}
+              alt={`${partner.line1} ${partner.line2}`}
               className="object-contain transition-transform hover:scale-105 h-28 w-44"
               loading="lazy"
               onError={(e) => {
