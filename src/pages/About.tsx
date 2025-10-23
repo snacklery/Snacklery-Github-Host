@@ -193,18 +193,6 @@ const About = () => {
                   image: "/images/mitesh.jpg",
                   title: "Marketing Advisor – Startups & FMCG Strategy",
                   bio: "With 30+ years in corporate marketing and academia, Mitesh guides Snacklery in scaling its market presence and driving growth in B2B and sustainability-focused sectors."
-                },
-                {
-                  name: "Mr. Jubin Mishra",
-                  image: "/images/srinivas.jpg",
-                  title: "Partner, Blue Helion – Business Strategy & Sustainability", 
-                  bio: "Jubin helps startups integrate sustainable practices while scaling operations, ensuring Snacklery's innovative edible cutlery achieves both impact and profitability."
-                },
-                {
-                  name: "Dr. Tamanna Chaturvedi",
-                  image: "/images/jubin.jpg",
-                  title: "Faculty, IIFT – Trade & Agri Business Policy",
-                  bio: "An expert in trade and MSME development, Dr. Chaturvedi advises Snacklery on regulatory frameworks, global trade opportunities, and sourcing agri-based ingredients sustainably."
                 }
               ].map((member, index) => (
                 <Card key={index} className="group hover:shadow-green transition-smooth text-center animate-fade-in-up">
