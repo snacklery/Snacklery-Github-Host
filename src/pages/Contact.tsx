@@ -16,20 +16,30 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   company: z.string().optional(),
-  productInterest: z.array(z.string()).min(1, "Please select at least one product"),
+  shapes: z.array(z.string()).min(1, "Please select at least one shape"),
+  flavors: z.array(z.string()).min(1, "Please select at least one flavor"),
+  specialProducts: z.array(z.string()).optional(),
   quantity: z.string().min(1, "Please specify quantity needed"),
   message: z.string().optional()
 });
 
 type FormData = z.infer<typeof formSchema>;
 
-const products = [
-  { id: "vanilla-spoon", label: "Vanilla Spoon", unit: "pieces" },
-  { id: "choclate-spoon", label: "Choclate Spoon", unit: "pieces" },
-  { id: "pepper-spoon", label: "Pepper Spoon", unit: "pieces" },
-  { id: "stirrer-collection", label: "Stirrer Collection", unit: "pieces" },
-  { id: "pepper-fork", label: "Pepper Fork", unit: "pieces" },
-  { id: "fork-pixy", label: "Fork Pixy", unit: "pieces" }
+const shapes = [
+  { id: "spork", label: "Spork" },
+  { id: "spoon", label: "Spoon" },
+  { id: "dessert-spoon", label: "Dessert Spoon" }
+];
+
+const flavors = [
+  { id: "peri-peri", label: "Peri Peri", description: "Bold, Zesty & Fiery" },
+  { id: "simply-classic", label: "Simply Classic", description: "The authentic taste of golden wheat" },
+  { id: "chocolate", label: "Chocolate", description: "Rich, Smooth & Indulgent" }
+];
+
+const specialProducts = [
+  { id: "edible-stirrers", label: "Edible Stirrers" },
+  { id: "pixy", label: "Pixy" }
 ];
 
 const Contact = () => {
@@ -40,47 +50,53 @@ const Contact = () => {
       email: "",
       phone: "",
       company: "",
-      productInterest: [],
+      shapes: [],
+      flavors: [],
+      specialProducts: [],
       quantity: "",
       message: ""
     }
   });
 
-  const selectedProducts = form.watch("productInterest");
+  const selectedShapes = form.watch("shapes");
+  const selectedFlavors = form.watch("flavors");
   
   const getQuantityPlaceholder = () => {
-    if (selectedProducts.length === 0) return "e.g., 1000 pieces";
-    
-    const hasKgProduct = selectedProducts.some(productId => 
-      products.find(p => p.id === productId)?.unit === "kg"
-    );
-    const hasPiecesProduct = selectedProducts.some(productId => 
-      products.find(p => p.id === productId)?.unit === "pieces"
-    );
-    
-    if (hasKgProduct && hasPiecesProduct) {
-      return "e.g., 1000 pieces, 50 kg";
-    } else if (hasKgProduct) {
-      return "e.g., 50 kg";
-    } else {
-      return "e.g., 1000 pieces";
-    }
+    return "e.g., 1000 pieces";
   };
 
   const generateWhatsAppMessage = (data: FormData) => {
-    const productNames = data.productInterest.map(productId => 
-      products.find(p => p.id === productId)?.label
+    const shapeNames = data.shapes.map(id => 
+      shapes.find(s => s.id === id)?.label
+    ).join(", ");
+    
+    const flavorNames = data.flavors.map(id => 
+      flavors.find(f => f.id === id)?.label
     ).join(", ");
 
-    return `Hi! I'm excited to bite Snacklery's edible cutlery products.
+    const specialProductNames = data.specialProducts && data.specialProducts.length > 0
+      ? data.specialProducts.map(id => 
+          specialProducts.find(p => p.id === id)?.label
+        ).join(", ")
+      : null;
+
+    let message = `Hi! I'm excited to bite Snacklery's edible cutlery products.
 
 Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}${data.company ? `\nCompany: ${data.company}` : ''}
-Product Interest: ${productNames}
-Quantity Needed: ${data.quantity}${data.message ? `\n\nMessage: ${data.message}` : ''}
+Shapes: ${shapeNames}
+Flavors: ${flavorNames}`;
+
+    if (specialProductNames) {
+      message += `\nSpecial Products: ${specialProductNames}`;
+    }
+
+    message += `\nQuantity Needed: ${data.quantity}${data.message ? `\n\nMessage: ${data.message}` : ''}
 
 Looking forward to hearing from you!`;
+
+    return message;
   };
 
   return (
@@ -226,12 +242,82 @@ Looking forward to hearing from you!`;
 
                   <FormField
                     control={form.control}
-                    name="productInterest"
+                    name="shapes"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Product Interest *</FormLabel>
+                        <FormLabel>Shapes *</FormLabel>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                          {shapes.map((shape) => (
+                            <div key={shape.id} className="flex items-center space-x-3">
+                              <Checkbox
+                                id={shape.id}
+                                checked={field.value?.includes(shape.id)}
+                                onCheckedChange={(checked) => {
+                                  const current = field.value || [];
+                                  if (checked) {
+                                    field.onChange([...current, shape.id]);
+                                  } else {
+                                    field.onChange(current.filter((id) => id !== shape.id));
+                                  }
+                                }}
+                              />
+                              <Label htmlFor={shape.id} className="text-sm font-medium">
+                                {shape.label}
+                              </Label>
+                            </div>
+                          ))}
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="flavors"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Flavors *</FormLabel>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                          {flavors.map((flavor) => (
+                            <div key={flavor.id} className="flex items-start space-x-3 p-3 border rounded-lg hover:bg-accent transition-colors">
+                              <Checkbox
+                                id={flavor.id}
+                                checked={field.value?.includes(flavor.id)}
+                                onCheckedChange={(checked) => {
+                                  const current = field.value || [];
+                                  if (checked) {
+                                    field.onChange([...current, flavor.id]);
+                                  } else {
+                                    field.onChange(current.filter((id) => id !== flavor.id));
+                                  }
+                                }}
+                                className="mt-1"
+                              />
+                              <div className="flex-1">
+                                <Label htmlFor={flavor.id} className="text-sm font-medium cursor-pointer">
+                                  {flavor.label}
+                                </Label>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {flavor.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="specialProducts"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Special Products (Optional)</FormLabel>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                          {products.map((product) => (
+                          {specialProducts.map((product) => (
                             <div key={product.id} className="flex items-center space-x-3">
                               <Checkbox
                                 id={product.id}

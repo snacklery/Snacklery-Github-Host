@@ -30,17 +30,17 @@ const Products = () => {
     {
       name: "Peri Peri",
       image: "/images/products/Peri Peri.png",
-      description: "Spicy & Tangy"
+      description: "Bold, Zesty & Fiery"
     },
     {
       name: "Simply Classic",
       image: "/images/products/Simply Classic.png",
-      description: "Natural & Wholesome"
+      description: "The authentic taste of golden wheat"
     },
     {
       name: "Chocolate",
       image: "/images/products/Chocolate.png",
-      description: "Rich & Indulgent"
+      description: "Rich, Smooth & Indulgent"
     }
   ];
 
