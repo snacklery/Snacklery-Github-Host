@@ -9,8 +9,10 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/images/snacklery-logo.png" alt="Snacklery" className="h-12 w-12" />
-              <span className="text-2xl font-bold">Snacklery</span>
+              <div className="bg-white/95 rounded-full p-1.5 transition-smooth hover:scale-110">
+                <img src="/images/snacklery-logo.jpeg" alt="Snacklery" className="h-10 w-10 rounded-full" />
+              </div>
+              <span className="text-2xl font-bold text-white">Snacklery</span>
             </div>
             <p className="text-primary-foreground/80 mb-6 max-w-md">
               Revolutionizing the way we think about cutlery. Our edible solutions combine 

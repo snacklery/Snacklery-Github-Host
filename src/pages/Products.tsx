@@ -5,48 +5,57 @@ import { Check, Star } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Products = () => {
-  const products = [
+  const shapes = [
     {
-      name: "Vanilla Spoon",
-      description: "A delightfully sweet edible spoon with natural vanilla flavor. Perfect for desserts, yogurt, and sweet treats.",
-      features: ["Natural vanilla flavoring", "15-20 minute structural integrity", "Food-grade edible polymer", "Enhances dessert experience"],
-      popular: true,
-      image: "/images/vanilla-spoon.png"
+      name: "Spork",
+      image: "/images/products/Spork.png",
+      tagline: "The all-rounder for meals on the go",
+      useCases: ["Rice bowls", "Noodles", "Pasta", "Salads", "Snacks"]
     },
     {
-      name: "Chocolate Spoon",
-      description: "Rich chocolate-flavored edible spoon designed specifically for desserts. Adds an extra layer of indulgence to your sweet treats.",
-      features: ["Rich chocolate flavor", "Perfect for desserts and ice cream", "Maintains structure for 15-20 minutes", "Premium cocoa ingredients"],
-      popular: false,
-      image: "/images/chocolate-spoon.png"
+      name: "Spoon",
+      image: "/images/products/Spoon.png",
+      tagline: "Perfect for sipping, scooping & savoring",
+      useCases: ["Soups", "Yogurt", "Ice cream", "Puddings", "Breakfast cereals"]
     },
     {
-      name: "Pepper Spoon",
-      description: "Savory edible spoon with a hint of black pepper. Ideal for soups, curries, and main course meals.",
-      features: ["Subtle pepper seasoning", "Heat-resistant construction", "Complements savory dishes", "Natural spice integration"],
-      popular: false,
-      image: "/images/pepper-spoon.png"
+      name: "Dessert Spoon",
+      image: "/images/products/Dessert Spoon.png",
+      tagline: "Made for sweet moments",
+      useCases: ["Ice cream", "Cakes", "Brownies", "Mousses", "Traditional Indian sweets"]
+    }
+  ];
+
+  const flavors = [
+    {
+      name: "Peri Peri",
+      image: "/images/products/Peri Peri.png",
+      description: "Spicy & Tangy"
     },
     {
-      name: "Stirrer Collection",
-      description: "Versatile edible stirrers available in three variants: Normal, Chocolate, and Vanilla. Perfect for beverages and mixing.",
-      features: ["Three flavor variants available", "Optimal for hot and cold beverages", "Dissolves at perfect pace", "Multi-purpose functionality"],
-      popular: false,
-      image: "/images/stirrer.png"
+      name: "Simply Classic",
+      image: "/images/products/Simply Classic.png",
+      description: "Natural & Wholesome"
     },
     {
-      name: "Pepper Fork",
-      description: "Innovative edible fork with pepper seasoning. Designed for main courses and savory dishes requiring fork utensils.",
-      features: ["Pepper-infused edible material", "Fork design for versatility", "Maintains strength during meals", "Adds flavor to every bite"],
-      popular: false,
-      image: "/lovable-uploads/ef0d98dc-96e9-459b-9125-27190b0059fd.png"
+      name: "Chocolate",
+      image: "/images/products/Chocolate.png",
+      description: "Rich & Indulgent"
+    }
+  ];
+
+  const specialProducts = [
+    {
+      name: "Edible Stirrers",
+      image: "/images/products/Stirrer.png",
+      description: "Versatile edible stirrers available in all three flavors. Perfect for beverages and mixing.",
+      features: ["All three flavor variants", "Optimal for hot and cold beverages", "Dissolves at perfect pace", "Multi-purpose functionality"]
     },
     {
       name: "Pixy",
+      image: "/images/products/Pixy.png",
       description: "Our signature compact edible utensil. A unique innovation combining functionality with delightful taste experience.",
-      features: ["Compact and portable design", "Unique flavor profile", "Multi-functional usage", "Premium food-grade ingredients"],
-      popular: false,
-      image: "/images/pixy.png"
+      features: ["Compact and portable design", "Available in all flavors", "Multi-functional usage", "Premium food-grade ingredients"]
     }
   ];
 
@@ -79,59 +88,137 @@ const Products = () => {
           <h1 className="text-4xl md:text-6xl font-serif font-medium text-foreground mb-6 tracking-tight">
             Product <span className="text-primary">Solutions</span>
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Advanced edible cutlery technology engineered for commercial food service, 
-            hospitality, and consumer applications. Delivering sustainability without compromise.
+          <p className="text-xl text-muted-foreground leading-relaxed mb-4">
+            <strong>Edible cutlery that customers actually enjoy eating.</strong>
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Available in multiple shapes and flavors, designed for restaurants, caterers, hospitality brands, and conscious consumers.
           </p>
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Shapes Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {products.map((product, index) => (
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
+              Choose Your <span className="text-primary">Shape</span>
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Every shape is designed for different meals and moments
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {shapes.map((shape, index) => (
+              <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
+                <CardContent className="p-8 space-y-6">
+                  <div className="w-80 h-80 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
+                    <img 
+                      src={shape.image} 
+                      alt={shape.name}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-2 text-center">{shape.name}</h3>
+                    <p className="text-center text-muted-foreground italic">{shape.tagline}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-3">Perfect for:</p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {shape.useCases.map((useCase, idx) => (
+                        <Badge key={idx} variant="secondary">{useCase}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Flavors Section */}
+      <section className="py-20 gradient-earth">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
+              Select Your <span className="text-primary">Flavor</span>
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Each flavor is crafted to complement your culinary experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+            {flavors.map((flavor, index) => (
+              <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
+                <CardContent className="p-8 space-y-6">
+                  <div className="w-64 h-64 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
+                    <img 
+                      src={flavor.image} 
+                      alt={flavor.name}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-2 text-center">{flavor.name}</h3>
+                    <p className="text-center text-muted-foreground font-medium">{flavor.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expanding the Edible Experience Section */}
+      <section className="py-20 gradient-earth">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
+              Expanding the <span className="text-primary">Edible Experience</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Building a complete ecosystem of sustainable edible alternatives for food and beverage service.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {specialProducts.map((product, index) => (
               <Card 
                 key={index} 
-                className={`group hover:shadow-green transition-smooth animate-fade-in-up relative ${
-                  product.popular ? 'ring-2 ring-primary' : ''
-                }`}
+                className="group hover:shadow-green transition-smooth animate-fade-in-up"
               >
-                {product.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="gradient-hero text-primary-foreground px-4 py-1">
-                      <Star className="w-3 h-3 mr-1" />
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                
                 <CardHeader className="text-center pb-4">
-                  <div className="h-32 w-32 mx-auto mb-4 animate-float flex items-center justify-center">
+                  <div className="w-64 h-64 mx-auto mb-4 rounded-lg overflow-hidden bg-white flex items-center justify-center">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="h-full w-auto object-contain"
+                      className="h-full w-full object-contain"
                     />
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">{product.name}</CardTitle>
                 </CardHeader>
                 
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+                  <p className="text-muted-foreground leading-relaxed text-center">{product.description}</p>
                   
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-muted-foreground">
-                          <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                          {feature}
-                        </li>
+                    <h4 className="font-semibold text-foreground text-center">Available in:</h4>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {flavors.map((flavor, idx) => (
+                        <Badge key={idx} variant="outline">{flavor.name}</Badge>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                  
+
+                  <div className="pt-4 border-t">
+                    <p className="text-center text-sm font-semibold text-primary">
+                      Available on Request for Large-Scale Orders
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -246,7 +333,7 @@ const Products = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Make the Switch?
+            Ready to Transform Your Food Service?
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Join the edible cutlery revolution and help us create a more sustainable future, 

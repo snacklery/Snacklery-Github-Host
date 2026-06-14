@@ -124,35 +124,10 @@ const Impact = () => {
           <p className="text-xl text-muted-foreground leading-relaxed">
             Real change starts small — and grows with every spoon, straw, and stirrer we replace.
           </p>
-        </div>
-      </section>
-
-      {/* Our Progress Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
-              Our Progress So Far
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Recycle, label: "Plastic cutlery pieces prevented from entering landfills", value: "1,00,000+", color: "text-primary" },
-              { icon: Globe, label: "CO₂ emissions reduced (based on lifecycle data vs. plastic)", value: "4000+ kg", color: "text-secondary" },
-              { icon: Users, label: "Consumers experienced Snacklery products through trials & pilots", value: "20000+", color: "text-accent" },
-              { icon: Leaf, label: "Institutional partners onboarded (caterers, cafés, and events)", value: "10+", color: "text-primary" }
-            ].map((stat, index) => (
-              <Card key={index} className="text-center group hover:shadow-green transition-smooth animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 gradient-sustainable rounded-full mb-6 group-hover:scale-110 transition-bounce`}>
-                    <stat.icon className="h-8 w-8 text-foreground" />
-                  </div>
-                  <div className={`text-3xl font-bold mb-4 ${stat.color}`}>{stat.value}</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="mt-8 lg:hidden">
+            <Button variant="outline" size="lg" className="border-2" asChild>
+              <Link to="/">← Back to Home</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -346,6 +321,36 @@ const Impact = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Our Progress Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
+              Our Progress So Far
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Recycle, label: "Plastic cutlery pieces prevented from entering landfills", value: "1,00,000+", color: "text-primary" },
+              { icon: Globe, label: "CO₂ emissions reduced (based on lifecycle data vs. plastic)", value: "4000+ kg", color: "text-secondary" },
+              { icon: Users, label: "Consumers experienced Snacklery products through trials & pilots", value: "20000+", color: "text-accent" },
+              { icon: Leaf, label: "Institutional partners onboarded (caterers, cafés, and events)", value: "10+", color: "text-primary" }
+            ].map((stat, index) => (
+              <Card key={index} className="text-center group hover:shadow-green transition-smooth animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 gradient-sustainable rounded-full mb-6 group-hover:scale-110 transition-bounce`}>
+                    <stat.icon className="h-8 w-8 text-foreground" />
+                  </div>
+                  <div className={`text-3xl font-bold mb-4 ${stat.color}`}>{stat.value}</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
