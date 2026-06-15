@@ -112,8 +112,8 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {shapes.map((shape, index) => (
               <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
-                <CardContent className="p-8 space-y-6">
-                  <div className="w-80 h-80 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
+                <CardContent className="p-6 sm:p-8 space-y-6">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
                     <img 
                       src={shape.image} 
                       alt={shape.name}
@@ -154,8 +154,8 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
             {flavors.map((flavor, index) => (
               <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
-                <CardContent className="p-8 space-y-6">
-                  <div className="w-64 h-64 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
+                <CardContent className="p-6 sm:p-8 space-y-6">
+                  <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
                     <img 
                       src={flavor.image} 
                       alt={flavor.name}
@@ -192,7 +192,7 @@ const Products = () => {
                 className="group hover:shadow-green transition-smooth animate-fade-in-up"
               >
                 <CardHeader className="text-center pb-4">
-                  <div className="w-64 h-64 mx-auto mb-4 rounded-lg overflow-hidden bg-white flex items-center justify-center">
+                  <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto mb-4 rounded-lg overflow-hidden bg-white flex items-center justify-center">
                     <img 
                       src={product.image} 
                       alt={product.name}
