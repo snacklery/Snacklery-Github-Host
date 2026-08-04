@@ -5,8 +5,7 @@ import "./index.css";
 
 initializeClarity();
 
-// Register service worker
-if ('serviceWorker' in navigator) {
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
       .then((registration) => {
