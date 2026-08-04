@@ -1,6 +1,9 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
+import { initializeClarity } from "./lib/clarity";
 import "./index.css";
+
+initializeClarity();
 
 // Register service worker
 if ('serviceWorker' in navigator) {
