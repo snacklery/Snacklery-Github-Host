@@ -1,9 +1,11 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { initializeClarity } from "./lib/clarity";
+import { inject } from '@vercel/analytics';
 import "./index.css";
 
 initializeClarity();
+inject();
 
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
