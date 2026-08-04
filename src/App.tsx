@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { trackPageView } from "./lib/analytics";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -33,7 +35,30 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen flex flex-col">
+          <AppRoutes openModal={openModal} closeModal={closeModal} isOpen={isOpen} />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
+
+const AppRoutes = ({
+  openModal,
+  closeModal,
+  isOpen,
+}: {
+  openModal: () => void;
+  closeModal: () => void;
+  isOpen: boolean;
+}) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
+  return (
+    <div className="min-h-screen flex flex-col">
             <Header onContactClick={openModal} />
             <main className="flex-1">
               <Routes>
@@ -54,9 +79,6 @@ const App = () => {
             <WhatsAppButton isFloating={true} onContactClick={openModal} />
             <ContactModal isOpen={isOpen} onClose={closeModal} />
           </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
   );
 };
 
