@@ -8,14 +8,21 @@ declare global {
 }
 
 const GA_SCRIPT_ID = "ga4-gtag-script";
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-9JXZJLDT1Y";
 
 const ensureGtagQueue = () => {
   window.dataLayer = window.dataLayer || [];
+
   if (!window.gtag) {
     window.gtag = function gtag(...args: unknown[]) {
       window.dataLayer?.push(args);
     };
+  }
+};
+
+const warnIfMeasurementIdMissing = () => {
+  if (import.meta.env.DEV && !import.meta.env.VITE_GA_MEASUREMENT_ID) {
+    console.warn("VITE_GA_MEASUREMENT_ID is missing. Google Analytics 4 will not be initialized.");
   }
 };
 
@@ -25,9 +32,7 @@ export const loadGoogleAnalytics = () => {
   }
 
   if (!GA_MEASUREMENT_ID) {
-    if (import.meta.env.DEV) {
-      console.warn("VITE_GA_MEASUREMENT_ID is missing. Google Analytics 4 will not be initialized.");
-    }
+    warnIfMeasurementIdMissing();
     return;
   }
 
@@ -55,6 +60,7 @@ export const initializeGoogleAnalytics = () => {
   }
 
   if (!GA_MEASUREMENT_ID) {
+    warnIfMeasurementIdMissing();
     return;
   }
 
@@ -63,12 +69,6 @@ export const initializeGoogleAnalytics = () => {
   }
 
   ensureGtagQueue();
-
-  if (!window.gtag) {
-    window.gtag = function gtag(...args: unknown[]) {
-      window.dataLayer?.push(args);
-    };
-  }
 
   window.gtag("js", new Date());
   window.gtag("config", GA_MEASUREMENT_ID, {
