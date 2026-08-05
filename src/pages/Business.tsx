@@ -221,10 +221,10 @@ const Business = ({ onContactClick }: BusinessProps) => {
           <Button 
             variant="outline" 
             size="xl" 
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-            onClick={onContactClick}
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" 
+            asChild
           >
-            Partner With Us
+            <Link to="/contact">Partner With Us</Link>
           </Button>
         </div>
       </section>

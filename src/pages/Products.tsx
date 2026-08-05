@@ -353,14 +353,14 @@ const Products = () => {
             >
               Shop All Products
             </WhatsAppButton>
-            <WhatsAppButton 
-              message="Hi! I'd like to request samples of Snacklery's edible cutlery products to try them out."
+            <Button 
               variant="outline" 
               size="xl" 
               className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              asChild
             >
-              Request Samples
-            </WhatsAppButton>
+              <Link to="/contact">Request Samples</Link>
+            </Button>
           </div>
         </div>
       </section>

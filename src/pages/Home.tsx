@@ -48,7 +48,7 @@ const Home = ({ onContactClick }: HomeProps) => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" className="px-10 py-4 border-2" asChild>
-                  <Link to="/business">Partner With Us</Link>
+                  <Link to="/contact">Partner With Us</Link>
                 </Button>
               </div>
             </div>
@@ -380,16 +380,16 @@ const Home = ({ onContactClick }: HomeProps) => {
             Drive measurable environmental impact while enhancing operational efficiency.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button variant="outline" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-10 py-4 border-2">
-              <Link to="/business">Partner With Us</Link>
+            <Button variant="outline" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-10 py-4 border-2" asChild>
+              <Link to="/contact">Partner With Us</Link>
             </Button>
             <Button 
               variant="outline" 
               size="xl" 
-              className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-10 py-4"
-              onClick={onContactClick}
+              className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-10 py-4" 
+              asChild
             >
-              Request Samples
+              <Link to="/contact">Request Samples</Link>
             </Button>
           </div>
         </div>

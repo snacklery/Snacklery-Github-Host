@@ -315,7 +315,7 @@ const Impact = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="hero" size="xl" className="px-10 py-4" asChild>
-                    <Link to="/business">Partner With Us</Link>
+                    <Link to="/contact">Partner With Us</Link>
                   </Button>
                   <Button variant="outline" size="xl" className="px-10 py-4 border-2" asChild>
                     <Link to="/products">Get Snacklery Today</Link>
