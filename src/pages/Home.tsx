@@ -1,10 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Leaf, Utensils, Recycle, Globe, Award, Trophy, Sprout } from "lucide-react";
+import { ArrowRight, Leaf, Utensils, Recycle } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-image.jpg";
 import productsImage from "@/assets/soup-with-edible-spoons.jpg";
 import LogoCarousel from "@/components/LogoCarousel";
+
+const awards = [
+  {
+    image: "/images/awards/cowe-logo.png",
+    title: "Fempreneur Season 2 Winner",
+    description: "COWE – Centre for Women Entrepreneurship",
+  },
+  {
+    image: "/images/awards/badruka-logo.png",
+    title: "Best Startup Award",
+    description: "Pitch Battle by Badruka College of Commerce and Arts",
+  },
+  {
+    image: "/images/awards/startupedia.png",
+    title: "Innovation Runner-up",
+    description: "Startupedia 2024 · IPE, Hyderabad",
+  },
+];
 
 interface HomeProps {
   onContactClick?: () => void;
@@ -19,7 +36,7 @@ const Home = ({ onContactClick }: HomeProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-foreground mb-8 leading-[1.1] tracking-tight">
-                <span className="text-foreground">🌍 "What if your cutlery could also be your meal?"</span>
+                <span className="text-foreground">"What if your cutlery could also be your meal?"</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed font-light max-w-xl">
                 Snacklery makes edible spoons, stirrers, and straws that dissolve into coffee, soups, or mocktails—and can be eaten afterward.
@@ -43,11 +60,15 @@ const Home = ({ onContactClick }: HomeProps) => {
                     src="/lovable-uploads/9006b285-dd78-4414-8339-2d321841ef37.png" 
                     alt="Young girl with thumbs up enjoying smoothie with edible straw" 
                     className="w-full h-64 object-contain bg-gradient-to-br from-muted/20 to-muted/40 rounded-2xl animate-float shadow-lg backdrop-blur-sm"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <img 
                     src="/lovable-uploads/10c5d88e-1b4c-4fb9-b5c4-8179a2053e45.png" 
                     alt="Woman eating with edible spoon" 
                     className="w-full h-64 object-contain bg-gradient-to-br from-primary/10 to-primary/20 rounded-2xl animate-float delay-100 shadow-lg backdrop-blur-sm"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-6">
@@ -55,11 +76,15 @@ const Home = ({ onContactClick }: HomeProps) => {
                     src="/lovable-uploads/afaecac5-8bb7-4005-80d3-52fe1d66914e.png" 
                     alt="Businessman drinking coffee with edible stirrer" 
                     className="w-full h-64 object-contain bg-gradient-to-br from-secondary/10 to-secondary/20 rounded-2xl animate-float delay-200 shadow-lg backdrop-blur-sm"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <img 
                     src="/lovable-uploads/ec625d05-7d6b-454f-998d-a76fdcd7db37.png" 
                     alt="School child eating with edible spoon" 
                     className="w-full h-64 object-contain bg-gradient-to-br from-accent/10 to-accent/20 rounded-2xl animate-float delay-300 shadow-lg backdrop-blur-sm"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -133,29 +158,23 @@ const Home = ({ onContactClick }: HomeProps) => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <Card className="group text-center animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <Trophy className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">🥇 Competition Winner</h3>
-                <p className="text-muted-foreground">COWE 2024</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group text-center animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <Trophy className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">🥇 Best Startup Award</h3>
-                <p className="text-muted-foreground">Pitch Battle by Badruka College of Commerce and Arts</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="group text-center animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <Award className="h-12 w-12 text-secondary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">🥈 Innovation Runner-up</h3>
-                <p className="text-muted-foreground">Startupedia 2024<br/>IPE, Hyderabad</p>
-              </CardContent>
-            </Card>
+            {awards.map((award, index) => (
+              <Card key={index} className="group text-center animate-fade-in-up border-0 shadow-soft bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="mx-auto mb-6 h-44 w-full max-w-[340px] overflow-hidden rounded-3xl bg-white p-2 shadow-sm">
+                    <img
+                      src={award.image}
+                      alt={award.title}
+                      className={index === 2 ? "h-full w-full object-cover object-center transform scale-105 transition-transform duration-500 ease-out hover:scale-110" : "h-full w-full object-contain object-center"}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{award.title}</h3>
+                  <p className="text-muted-foreground whitespace-pre-line">{award.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
           
           {/* Strategic Partnerships Section */}
@@ -233,6 +252,8 @@ const Home = ({ onContactClick }: HomeProps) => {
                 src={productsImage} 
                 alt="Snacklery product range" 
                 className="relative z-10 w-full h-auto rounded-3xl shadow-earth leaf-wave"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="animate-fade-in-up">

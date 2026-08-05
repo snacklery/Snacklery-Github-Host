@@ -27,11 +27,11 @@ const LogoCarousel = () => {
       href: "https://www.cftri.res.in"
     },
     {
-      name: "Badruka",
+      name: "BCCA",
       fullName: "Badruka College of Commerce and Arts",
       location: "Hyderabad, India",
       logo: "/images/badruka-college-logo.png",
-      logoClass: "max-h-36",
+      logoClass: "max-h-40",
       href: "https://www.badruka.com/bcca/"
     }
   ];
@@ -52,6 +52,7 @@ const LogoCarousel = () => {
             alt={partner.name}
             className={`object-contain max-w-full ${partner.logoClass}`}
             loading="lazy"
+            decoding="async"
             onError={(n) => {
               const target = n.currentTarget;
               console.warn(`Failed to load image: ${partner.logo}`);
@@ -70,7 +71,8 @@ const LogoCarousel = () => {
             rel="noopener noreferrer"
             className="font-semibold text-sm text-slate-900 hover:text-slate-700"
           >
-            {partner.name} — {partner.fullName}
+            <span>{partner.name}</span>
+            <span className="block text-[11px] text-muted-foreground mt-1">{partner.fullName}</span>
           </a>
           <p className="text-[11px] text-muted-foreground">{partner.location}</p>
         </div>

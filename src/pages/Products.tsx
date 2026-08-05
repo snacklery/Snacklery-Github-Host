@@ -118,6 +118,8 @@ const Products = () => {
                       src={shape.image} 
                       alt={shape.name}
                       className="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div>
@@ -160,6 +162,8 @@ const Products = () => {
                       src={flavor.image} 
                       alt={flavor.name}
                       className="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div>
@@ -197,6 +201,8 @@ const Products = () => {
                       src={product.image} 
                       alt={product.name}
                       className="h-full w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">{product.name}</CardTitle>
