@@ -303,9 +303,8 @@ const Products = () => {
                   <div className="text-sm text-primary font-semibold mt-2">Coming Soon</div>
                 </CardHeader>
                 
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">{product.description}</p>
-                  
+                <CardContent className="space-y-6 flex flex-col h-full">
+                  <p className="text-muted-foreground leading-relaxed min-h-[5.5rem]">{product.description}</p>
                   <div className="space-y-3">
                     <h4 className="font-semibold text-foreground">Key Features:</h4>
                     <ul className="space-y-2">
@@ -318,7 +317,7 @@ const Products = () => {
                     </ul>
                   </div>
                   
-                  <div className="pt-4">
+                  <div className="pt-4 mt-auto">
                     <Button 
                       variant="outline" 
                       size="lg" 

@@ -134,7 +134,7 @@ const Impact = () => {
 
       {/* Impact Calculator */}
       <section className="py-20 gradient-earth">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-serif font-medium text-foreground mb-4 tracking-tight">
               See Your Impact in Real-Time 🌍
@@ -153,7 +153,7 @@ const Impact = () => {
             </CardHeader>
             <CardContent className="p-8 space-y-8">
               {/* Calculator Inputs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="meals" className="text-sm font-medium">Meals per day</Label>
                   <Input
@@ -191,7 +191,7 @@ const Impact = () => {
                     className="text-center text-lg font-semibold"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 lg:col-span-3">
                   <Label htmlFor="material" className="text-sm font-medium">Replacing material</Label>
                   <Select value={replacedMaterial} onValueChange={setReplacedMaterial}>
                     <SelectTrigger className="text-center">
@@ -208,79 +208,102 @@ const Impact = () => {
               </div>
 
               {/* Results Display */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8 border-t">
-                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20">
-                  <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-                    📊 Monthly Impact
-                    <span className="text-sm text-muted-foreground font-normal">
-                      vs {getMaterialName(replacedMaterial)}
-                    </span>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8 border-t items-stretch">
+                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 shadow-[0_20px_60px_rgba(59,130,246,0.08)] h-full flex flex-col">
+                  <h3 className="text-xl font-semibold text-foreground mb-6">
+                    <div className="flex items-center gap-2">
+                      📊 Monthly Impact
+                    </div>
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Recycle className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-muted-foreground">Cutlery</span>
+                  <div className="grid grid-cols-2 gap-4 flex-1 min-h-0 auto-rows-fr">
+                    <div className="text-center p-6 bg-white/90 border border-primary/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Recycle className="h-4 w-4 text-primary" />
+                          Cutlery
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-primary font-semibold opacity-80">Pieces</div>
                       </div>
-                      <div className="text-2xl font-bold text-primary">{monthlyImpact.plastic.toLocaleString()}</div>
+                      <div className="text-3xl md:text-4xl font-bold text-primary break-words max-w-full">{monthlyImpact.plastic.toLocaleString()}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Zap className="h-4 w-4 text-accent" />
-                        <span className="text-sm text-muted-foreground">Energy</span>
+                    <div className="text-center p-6 bg-white/90 border border-accent/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Zap className="h-4 w-4 text-accent" />
+                          Energy
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-accent font-semibold opacity-100">kWh</div>
                       </div>
-                      <div className="text-xl font-bold text-accent">{monthlyImpact.energy.toFixed(1)} kWh</div>
+                      <div className="text-3xl md:text-4xl font-bold text-accent leading-none break-words max-w-full">{monthlyImpact.energy.toFixed(1)}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Droplets className="h-4 w-4 text-secondary" />
-                        <span className="text-sm text-muted-foreground">Water</span>
+                    <div className="text-center p-6 bg-white/90 border border-secondary/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Droplets className="h-4 w-4 text-secondary" />
+                          Water
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-secondary opacity-80">L</div>
                       </div>
-                      <div className="text-xl font-bold text-secondary">{monthlyImpact.water.toFixed(1)} L</div>
+                      <div className="text-3xl md:text-4xl font-bold text-secondary leading-none break-words max-w-full">{monthlyImpact.water.toFixed(1)}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Globe className="h-4 w-4 text-destructive" />
-                        <span className="text-sm text-muted-foreground">CO₂</span>
+                    <div className="text-center p-6 bg-white/90 border border-destructive/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Globe className="h-4 w-4 text-destructive" />
+                          CO₂
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-destructive opacity-80">kg</div>
                       </div>
-                      <div className="text-xl font-bold text-destructive">{monthlyImpact.co2.toFixed(2)} kg</div>
+                      <div className="text-3xl md:text-4xl font-bold text-destructive leading-none break-words max-w-full">{monthlyImpact.co2.toFixed(2)}</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl border border-secondary/20">
+                <div className="p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl border border-secondary/20 shadow-[0_20px_60px_rgba(16,185,129,0.08)] h-full flex flex-col">
                   <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
                     📈 Annual Impact
                     <span className="text-sm text-muted-foreground font-normal">12 months projection</span>
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Recycle className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-muted-foreground">Cutlery</span>
+                  <div className="grid grid-cols-2 gap-4 flex-1 min-h-0 auto-rows-fr">
+                    <div className="text-center p-6 bg-white/90 border border-primary/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Recycle className="h-4 w-4 text-primary" />
+                          Cutlery
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-primary font-semibold opacity-80">Pieces</div>
                       </div>
-                      <div className="text-2xl font-bold text-primary">{annualImpact.plastic.toLocaleString()}</div>
+                      <div className="text-3xl md:text-4xl font-bold text-primary break-words max-w-full">{annualImpact.plastic.toLocaleString()}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Zap className="h-4 w-4 text-accent" />
-                        <span className="text-sm text-muted-foreground">Energy</span>
+                    <div className="text-center p-6 bg-white/90 border border-accent/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Zap className="h-4 w-4 text-accent" />
+                          Energy
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-accent font-semibold opacity-100">kWh</div>
                       </div>
-                      <div className="text-xl font-bold text-accent">{annualImpact.energy.toFixed(0)} kWh</div>
+                      <div className="text-3xl md:text-4xl font-bold text-accent leading-none break-words max-w-full">{annualImpact.energy.toFixed(0)}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Droplets className="h-4 w-4 text-secondary" />
-                        <span className="text-sm text-muted-foreground">Water</span>
+                    <div className="text-center p-6 bg-white/90 border border-secondary/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Droplets className="h-4 w-4 text-secondary" />
+                          Water
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-secondary opacity-80">L</div>
                       </div>
-                      <div className="text-xl font-bold text-secondary">{annualImpact.water.toFixed(0)} L</div>
+                      <div className="text-3xl md:text-4xl font-bold text-secondary leading-none break-words max-w-full">{annualImpact.water.toFixed(0)}</div>
                     </div>
-                    <div className="text-center p-4 bg-background/50 rounded-xl">
-                      <div className="flex items-center justify-center gap-1 mb-2">
-                        <Globe className="h-4 w-4 text-destructive" />
-                        <span className="text-sm text-muted-foreground">CO₂</span>
+                    <div className="text-center p-6 bg-white/90 border border-destructive/10 rounded-3xl shadow-sm h-full flex flex-col justify-between min-h-[200px] gap-4">
+                      <div className="flex flex-col items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                          <Globe className="h-4 w-4 text-destructive" />
+                          CO₂
+                        </div>
+                        <div className="text-xs uppercase tracking-[0.18em] text-destructive opacity-80">kg</div>
                       </div>
-                      <div className="text-xl font-bold text-destructive">{annualImpact.co2.toFixed(1)} kg</div>
+                      <div className="text-3xl md:text-4xl font-bold text-destructive leading-none break-words max-w-full">{annualImpact.co2.toFixed(1)}</div>
                     </div>
                   </div>
                 </div>
@@ -447,8 +470,8 @@ const Impact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sdgGoals.map((goal, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {sdgGoals.slice(0, 3).map((goal, index) => (
               <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-3">
@@ -462,6 +485,26 @@ const Impact = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">{goal.description}</p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-6">
+            {sdgGoals.slice(3).map((goal, idx) => (
+              <div key={idx} className="w-full max-w-md">
+                <Card className="group hover:shadow-green transition-smooth animate-fade-in-up">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg">
+                        {goal.number}
+                      </div>
+                      <CardTitle className="text-lg">{goal.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{goal.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
