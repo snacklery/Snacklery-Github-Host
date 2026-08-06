@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +23,22 @@ import TermsConditions from "./pages/TermsConditions";
 import CookiePolicy from "./pages/CookiePolicy";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
+import LearnHub from "./pages/learn/LearnHub";
+import GuidesDirectory from "./pages/learn/GuidesDirectory";
+import FaqPage from "./pages/learn/FaqPage";
+import CollectionIndexPage from "./pages/learn/CollectionIndexPage";
+import ArticleDetailPage from "./pages/learn/ArticleDetailPage";
+import type { ContentCollection } from "./lib/content/types";
+import { collectionBasePath } from "./lib/content/paths";
+
+const learnCollections: ContentCollection[] = [
+  "blog",
+  "product-guides",
+  "industry-guides",
+  "sustainability",
+  "buying-guide",
+  "comparisons",
+];
 
 const queryClient = new QueryClient();
 
@@ -29,16 +46,18 @@ const App = () => {
   const { isOpen, openModal, closeModal } = useContactModal();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <AppRoutes openModal={openModal} closeModal={closeModal} isOpen={isOpen} />
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <AppRoutes openModal={openModal} closeModal={closeModal} isOpen={isOpen} />
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 
@@ -72,6 +91,17 @@ const AppRoutes = ({
                 <Route path="/terms-conditions" element={<TermsConditions />} />
                 <Route path="/cookie-policy" element={<CookiePolicy />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
+
+                <Route path="/learn" element={<LearnHub />} />
+                <Route path="/learn/guides" element={<GuidesDirectory />} />
+                <Route path="/learn/faq" element={<FaqPage />} />
+                {learnCollections.map((collection) => (
+                  <Route key={collection} path={collectionBasePath(collection)}>
+                    <Route index element={<CollectionIndexPage collection={collection} />} />
+                    <Route path=":slug" element={<ArticleDetailPage collection={collection} />} />
+                  </Route>
+                ))}
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

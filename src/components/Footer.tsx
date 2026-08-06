@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
@@ -81,6 +81,43 @@ const Footer = () => {
               <li>
                 <Link to="/business" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
                   For Businesses
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/learn/blog" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/learn/faq" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/learn/product-guides" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Product Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/learn/industry-guides" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Industry Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/learn/comparisons" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Comparisons
+                </Link>
+              </li>
+              <li>
+                <Link to="/learn/buying-guide" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Buying Guides
                 </Link>
               </li>
             </ul>
