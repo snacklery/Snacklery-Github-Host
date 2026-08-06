@@ -242,4 +242,74 @@
       scroll-behavior: smooth;
     }
   }
+
+  .article-card {
+    @apply rounded-[1.75rem] border border-border bg-card p-6 shadow-soft;
+  }
+
+  .article-card-info {
+    @apply border-primary/20 bg-primary/5;
+  }
+
+  .article-card-warning {
+    @apply border-destructive/20 bg-destructive/10;
+  }
+
+  .article-card-highlight {
+    @apply border-secondary/20 bg-secondary/10;
+  }
+
+  .article-card-checklist {
+    @apply border-accent/20 bg-accent/10;
+  }
+
+  .article-card h3 {
+    @apply text-lg font-semibold text-foreground mb-3;
+  }
+
+  .article-card p,
+  .article-card li {
+    @apply text-sm text-foreground/90;
+  }
+
+  .article-card-checklist .task-list-item {
+    @apply list-none;
+  }
+
+  .article-card-checklist .task-list-item input {
+    accent-color: hsl(var(--primary));
+  }
+
+  .article-cta-card {
+    border-radius: 2rem;
+    border: 1px solid hsl(var(--border));
+    background: var(--gradient-hero);
+    padding: 2rem;
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-earth);
+  }
+
+  .article-cta-card h3 {
+    display: none;
+  }
+
+  .article-cta-card p,
+  .article-cta-card ul,
+  .article-cta-card ol {
+    @apply text-primary-foreground/90;
+  }
+
+  .article-hero .badge {
+    @apply rounded-full bg-muted/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em];
+  }
+
+  .prose a {
+    @apply text-primary no-underline hover:underline;
+  }
+
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply scroll-mt-28;
+  }
 }
