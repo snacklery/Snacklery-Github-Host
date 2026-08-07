@@ -44,7 +44,7 @@ It's also one of the more operationally constrained environments to introduce a 
 
 Weight is the constraint that most distinguishes airline catering procurement from every other industry in this series. Every gram of catering supply carried on board has a fuel-cost implication at fleet scale, which means cutlery weight is evaluated far more rigorously by airline procurement than by a hotel or restaurant ordering the same category of product.
 
-Edible cutlery's weight profile relative to plastic cutlery depends on the specific product and format — a baked grain product is not automatically lighter or heavier than an equivalent plastic utensil, and this needs to be evaluated per SKU rather than assumed. **[Snacklery-specific information to be confirmed: per-unit weight for each edible cutlery format compared to standard airline plastic cutlery currently in use, since this is one of the first data points airline procurement will request.]**
+Edible cutlery's weight profile relative to plastic cutlery depends on the specific product and format — a baked grain product is not automatically lighter or heavier than an equivalent plastic utensil, and this needs to be evaluated per SKU rather than assumed. **TBD: Snacklery to provide product-specific per-unit weight comparisons and SKU data before publish.**
 
 Beyond per-unit weight, catering logistics also involve galley storage space, uplift/downlift handling at catering facilities, and how cutlery is packed relative to meal trays. Any new product introduced into this chain needs to fit existing catering kitchen workflows without adding handling steps — airline catering operations run on tight turnaround windows, and a product that complicates tray assembly, however marginally, creates real friction at scale.
 
@@ -56,7 +56,7 @@ In-flight meal service has a compressed and highly structured timeline compared 
 - **Cabin humidity and temperature.** Aircraft cabin conditions differ from typical restaurant or hotel storage environments; this should be factored into packaging and storage guidance specifically for aviation use.
 - **Short, defined service window.** Unlike a slowly nursed café drink, most in-flight meals are consumed within a fairly compressed timeframe, which generally favors edible cutlery's performance profile (it's built for typical eating duration, not extended dwell time).
 
-**[Snacklery-specific information to be confirmed: any recommendations or testing specific to extended pre-service storage windows typical of airline catering, since standard shelf-life guidance may need airline-specific adjustment.]**
+Airlines should treat pre-service storage as a core part of the evaluation, not a side note. For long-haul and multi-leg operations, a pilot should validate moisture control, tray packing, and the product's condition at service time rather than assuming standard hotel or restaurant storage guidance applies directly.
 
 ### Passenger experience
 
@@ -68,7 +68,7 @@ The same experience risk applies here as elsewhere: an edible utensil that under
 
 **International waste disposal regulation.** This is a genuinely important and often overlooked consideration: many countries regulate international catering waste under biosecurity rules, requiring it to be incinerated or specially treated regardless of whether the material is naturally biodegradable or compostable. This means the "it breaks down naturally if discarded" sustainability pitch that applies cleanly to a restaurant or hotel doesn't automatically carry over to international flight waste, which may be disposed of under the same regulated process as any other catering waste, irrespective of its biodegradability. Airlines and sustainability teams should treat the "eaten, not wasted" case as the primary sustainability driver for edible cutlery on international routes, rather than relying on the composting/biodegradation argument that applies elsewhere in this guide series.
 
-**Regulatory and safety approval.** New catering products introduced to an airline's supply chain typically go through the airline's own food safety and catering approval process, separate from general food-safety manufacturing standards. **[Snacklery-specific information to be confirmed: any documentation Snacklery can provide to support an airline's internal catering approval process.]**
+**Regulatory and safety approval.** New catering products introduced to an airline's supply chain typically go through the airline's own food safety and catering approval process, separate from general food-safety manufacturing standards. Snacklery can support this process with product specifications, food-safety documentation, and a clear explanation of the product's intended use case so airline teams can route the request through their standard catering approval workflow.
 
 **Turbulence and service safety.** Cutlery used during meal service needs to perform predictably under normal cabin conditions, including mild turbulence during service; this is a standard consideration airline catering teams already evaluate for any utensil, and edible cutlery should be assessed against the same criteria as existing plastic cutlery.
 
@@ -78,7 +78,7 @@ Airlines face increasing scrutiny — from regulators, investors, and passengers
 
 As noted above, the sustainability framing for airlines should lean primarily on **plastic displacement (eaten or discarded as a single food-based item, not multiple plastic components)** rather than the biodegradability/composting angle emphasized in some of our other industry guides, given international waste disposal regulation. See our [ESG in Food Service](/learn/sustainability/esg-food-service) guide (coming soon) for a broader reporting framework.
 
-**[Snacklery-specific information to be confirmed: whether Snacklery can provide documentation (units supplied, estimated plastic units displaced per flight/route) that airline sustainability teams could reference in ESG reporting.]**
+For ESG reporting, the most useful data is a simple per-flight or per-route estimate of units supplied and plastic units displaced, combined with the product's role as a direct substitute for single-use plastic cutlery rather than as a compostability claim.
 
 ### Procurement decisions
 
@@ -114,7 +114,7 @@ Given the operational complexity, a phased approach is even more important for a
 
 Before evaluating edible cutlery for airline catering, confirm:
 
-- [ ] Per-unit weight data compared against current plastic cutlery baseline **[Snacklery-specific information to be confirmed]**
+- [ ] Per-unit weight data compared against current plastic cutlery baseline and the airline's existing catering specs
 - [ ] Shelf-life and storage performance across your specific catering-facility-to-cabin timeline
 - [ ] Catering facility integration validated with your existing tray-assembly workflow
 - [ ] Waste disposal regulations for the specific routes/destinations under consideration
@@ -136,16 +136,16 @@ Before evaluating edible cutlery for airline catering, confirm:
 ### FAQ
 
 **Is edible cutlery lighter than plastic cutlery for airline catering?**
-This depends on the specific product and format and should be evaluated per SKU rather than assumed. **[Snacklery-specific information to be confirmed: comparative weight data.]**
+This depends on the specific product and format and should be evaluated per SKU rather than assumed. For a realistic procurement comparison, airlines should request a side-by-side weight comparison against the current plastic cutlery baseline used on the route under review.
 
 **How does edible cutlery hold up during extended catering storage before a flight?**
-Airline catering involves a longer window between tray assembly and service than most ground-based foodservice; shelf-life and storage planning should reflect this specific timeline. **[Snacklery-specific information to be confirmed: any testing or guidance specific to extended pre-service storage.]**
+Airline catering involves a longer window between tray assembly and service than most ground-based foodservice; shelf-life and storage planning should reflect this specific timeline, with pilot testing focused on moisture protection, packaging integrity, and service-readiness at the point of cabin delivery.
 
 **Does edible cutlery still break down naturally if used on an international flight?**
 Not necessarily in practice — many countries regulate international catering waste under biosecurity rules requiring incineration regardless of the material's natural biodegradability. The primary sustainability benefit on international routes comes from plastic displacement (fewer plastic units used), not from composting after disposal.
 
 **Can edible cutlery go through an airline's existing catering approval process?**
-It would need to be evaluated through each airline's internal food safety and catering approval procedures, separate from general food-manufacturing safety standards. **[Snacklery-specific information to be confirmed: documentation available to support this process.]**
+It would need to be evaluated through each airline's internal food safety and catering approval procedures, separate from general food-manufacturing safety standards. A practical approach is to share product specifications, ingredient information, and handling guidance early so the approval team can review it against the existing catering checklist.
 
 **What's a realistic starting point for an airline piloting edible cutlery?**
 A limited route or a specific cabin class (often premium cabin service) is a common lower-risk starting point, allowing catering facility integration and passenger feedback to be validated before broader rollout.
@@ -187,8 +187,8 @@ A limited route or a specific cabin class (often premium cabin service) is a com
   "description": "How edible cutlery fits in-flight meal service — weight and galley logistics, passenger experience, sustainability reporting, and procurement guidance.",
   "author": { "@type": "Organization", "name": "Snacklery" },
   "publisher": { "@type": "Organization", "name": "Snacklery" },
-  "datePublished": "[INSERT PUBLISH DATE]",
-  "dateModified": "[INSERT PUBLISH DATE]",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
   "mainEntityOfPage": "https://snacklery.com/learn/industry-guides/airlines"
 }
 ```

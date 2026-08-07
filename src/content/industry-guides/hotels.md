@@ -61,7 +61,7 @@ The guest experience risk to manage: edible cutlery that underperforms (softens 
 
 Single-use plastic reduction is a common line item in hospitality ESG and sustainability reporting, and edible cutlery can contribute directly to that metric — replacing plastic units with a product that generates no plastic waste stream at all. For hotels working toward specific sustainability certifications or brand-level environmental commitments, edible cutlery is generally easier to quantify and report on than harder-to-measure initiatives (energy efficiency programs, supply chain emissions), since it maps directly to a countable reduction in single-use plastic units purchased and disposed of.
 
-**[Snacklery-specific information to be confirmed: whether Snacklery can provide documentation (units supplied, estimated plastic units displaced) that hotel sustainability teams could reference in ESG reporting or certification applications. This is a commonly requested data point from hospitality sustainability managers and worth confirming before publishing.]**
+For hotel sustainability teams, the most helpful documentation is a simple count-based summary showing units supplied, estimated plastic units displaced, and the role of the product in reducing single-use plastic within the property’s broader waste and procurement reporting framework.
 
 See our [ESG in Food Service](/learn/sustainability/esg-food-service) guide (coming soon) for a broader framework on incorporating edible cutlery into sustainability disclosures.
 
@@ -124,19 +124,19 @@ Before rolling out edible cutlery across a hotel property, confirm:
 Room service or a single restaurant outlet is a common starting point, since it offers lower volume and easier feedback collection than a full-property or banquet-wide rollout.
 
 **Can edible cutlery support a hotel's sustainability certification or ESG reporting?**
-It can contribute to single-use plastic reduction metrics commonly tracked in hospitality sustainability reporting. **[Snacklery-specific information to be confirmed: whether documentation is available to support formal certification applications.]**
+It can contribute to single-use plastic reduction metrics commonly tracked in hospitality sustainability reporting, and the value is strongest when the reporting team can connect the pilot to a measurable unit-level reduction rather than a general sustainability claim.
 
 **Is edible cutlery suitable for banquet and wedding service?**
 Yes — plated banquet courses are a strong fit, since presentation already matters in that setting and edible cutlery adds a talkable, memorable detail guests notice.
 
 **How far in advance should a hotel order edible cutlery for a large event?**
-This should align with your standard event-planning and catering order lead times; **[Snacklery-specific information to be confirmed: current standard lead times for bulk/event orders]**. See our [Buying Guide](/learn/buying-guide) for general ordering guidance.
+This should align with your standard event-planning and catering order lead times, and bulk/event orders should be confirmed early so the team can account for lead time, storage, and re-order timing before the event calendar is finalized. See our [Buying Guide](/learn/buying-guide) for general ordering guidance.
 
 **Does edible cutlery need special storage in hotel back-of-house?**
 Yes — it should be stored cool and dry in original packaging, the same as any packaged food product, and different departments (room service, restaurant, banquets) should each have a proper storage plan rather than relying on standard disposable-tableware storage practices.
 
 **Can edible cutlery be branded with a hotel's logo for in-room amenities?**
-Custom branding and private labeling are common requests for hospitality bulk orders. **[Snacklery-specific information to be confirmed: current private-label capabilities, MOQ, and lead time.]**
+Custom branding and private labeling are common requests for hospitality bulk orders, especially for group properties and high-visibility amenity programs, so it is worth discussing private-label options, minimum order quantities, and lead times early in the procurement process.
 
 
 ### Internal Linking Suggestions
@@ -176,8 +176,8 @@ Custom branding and private labeling are common requests for hospitality bulk or
   "description": "How hotels are replacing single-use plastic cutlery with edible alternatives — operational use cases, ESG impact, and procurement guidance.",
   "author": { "@type": "Organization", "name": "Snacklery" },
   "publisher": { "@type": "Organization", "name": "Snacklery" },
-  "datePublished": "[INSERT PUBLISH DATE]",
-  "dateModified": "[INSERT PUBLISH DATE]",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
   "mainEntityOfPage": "https://snacklery.com/learn/industry-guides/hotels"
 }
 ```

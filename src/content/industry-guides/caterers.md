@@ -61,7 +61,7 @@ For caterers, edible cutlery is as much a sales and positioning tool as an opera
 
 ### Business and ROI considerations
 
-**[Snacklery-specific information to be confirmed: standard lead times for bulk event orders, and any rush-order capabilities for late-booked events.]**
+For caterers, the practical planning assumption is that event orders should be confirmed with enough lead time to cover both storage and delivery to the event site, while late-booked events should be assessed separately for whether they can be accommodated without compromising product quality or service timing.
 
 ### Procurement checklist
 
