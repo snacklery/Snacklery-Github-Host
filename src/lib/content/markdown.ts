@@ -17,6 +17,10 @@ function sanitizeEditorialNotes(line: string): string {
   return line
     .replace(/\*\*\[Snacklery-specific information[^\]]*\]\*\*/gi, "")
     .replace(/\[Snacklery-specific information[^\]]*\]/gi, "")
+    .replace(/\[INSERT[^\]]*\]/gi, "")
+    .replace(/\[TBD[^\]]*\]/gi, "")
+    .replace(/\[TO BE CONFIRMED[^\]]*\]/gi, "")
+    .replace(/\[INSERT PUBLISH DATE\]/gi, "")
     .replace(/^>\s*Primary CTA:\s*/i, "")
     .replace(/^>\s*Secondary CTA:\s*/i, "")
     .replace(/Primary CTA:\s*/i, "")

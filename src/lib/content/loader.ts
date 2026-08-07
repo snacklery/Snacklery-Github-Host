@@ -35,6 +35,14 @@ function toArray(value: unknown): string[] {
   return [];
 }
 
+function isPlaceholder(value: unknown): boolean {
+  if (typeof value !== "string") return false;
+  const v = value.trim().toLowerCase();
+  if (!v) return false;
+  const patterns = ["[insert", "insert ", "tbd", "to be confirmed", "snacklery-specific", "[snacklery", "[insert publish date"];
+  return patterns.some((p) => v.includes(p));
+}
+
 function buildArticle(path: string, raw: string): Article | null {
   const collection = collectionFromPath(path);
   const slug = slugFromPath(path);
@@ -58,12 +66,12 @@ function buildArticle(path: string, raw: string): Article | null {
     title: (data.title as string) || slug,
     description: (data.description as string) || "",
     author: (data.author as string) || "Snacklery Team",
-    date: (data.date as string) || new Date().toISOString().slice(0, 10),
-    updated: (data.updated as string) || undefined,
+    date: !isPlaceholder(data.date) ? ((data.date as string) || new Date().toISOString().slice(0, 10)) : new Date().toISOString().slice(0, 10),
+    updated: !isPlaceholder(data.updated) ? ((data.updated as string) || undefined) : undefined,
     readingTime: data.readingTime ? Number(data.readingTime) : estimateReadingTime(content),
-    keywords: toArray(data.keywords),
+    keywords: toArray(data.keywords).filter((k) => !isPlaceholder(k)),
     category: (data.category as string) || "General",
-    tags: toArray(data.tags),
+    tags: toArray(data.tags).filter((t) => !isPlaceholder(t)),
     heroImage: (data.heroImage as string) || undefined,
     heroImageAlt: (data.heroImageAlt as string) || (data.title as string) || "",
     featured: Boolean(data.featured),
