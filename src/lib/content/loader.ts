@@ -120,19 +120,24 @@ export function getTags(collection: ContentCollection): string[] {
 export function getRelatedArticles(article: Article, limit = 3): Article[] {
   if (article.relatedSlugs.length) {
     const explicit = article.relatedSlugs
-      .map((slug) => allArticles.find((a) => a.slug === slug))
+      .map((slug) => allArticles.find((a) => a.collection === article.collection && a.slug === slug))
       .filter((a): a is Article => Boolean(a));
     if (explicit.length) return explicit.slice(0, limit);
   }
 
-  const sameCollection = getArticles(article.collection).filter((a) => a.slug !== article.slug);
+  const pool = allArticles.filter((a) => a.slug !== article.slug);
 
-  const scored = sameCollection
+  const scored = pool
     .map((candidate) => {
       const tagOverlap = candidate.tags.filter((t) => article.tags.includes(t)).length;
+      const keywordOverlap = candidate.keywords.filter((k) => article.keywords.includes(k)).length;
       const sameCategory = candidate.category === article.category ? 1 : 0;
-      return { candidate, score: tagOverlap * 2 + sameCategory };
+      const sameCollectionBonus = candidate.collection === article.collection ? 2 : 0;
+      const explicitBonus = article.relatedSlugs.includes(candidate.slug) ? 6 : 0;
+      const score = explicitBonus + tagOverlap * 3 + keywordOverlap * 2 + sameCategory + sameCollectionBonus;
+      return { candidate, score };
     })
+    .filter((item) => item.score > 0)
     .sort((a, b) => b.score - a.score);
 
   return scored.slice(0, limit).map((s) => s.candidate);

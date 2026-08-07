@@ -1,5 +1,6 @@
 import { Marked } from "marked";
 import type { TocEntry } from "./types";
+import { isInternalRouteAvailable } from "./paths";
 
 const editorialSectionTitles = [
   "internal linking suggestions",
@@ -125,6 +126,25 @@ export function renderMarkdown(markdown: string): { html: string; toc: TocEntry[
         return `<h${depth} id="${slug}" class="scroll-mt-28 group">
           <a href="#${slug}" class="no-underline hover:text-primary transition-smooth">${this.parser.parseInline(tokens)}</a>
         </h${depth}>`;
+      },
+      link({ href, title, tokens }) {
+        const text = this.parser.parseInline(tokens);
+        const titleAttr = title ? ` title="${title}"` : "";
+
+        if (!href) {
+          return `<span${titleAttr}>${text}</span>`;
+        }
+
+        const isExternal = /^(https?:|mailto:|tel:)/i.test(href);
+        if (isExternal) {
+          return `<a href="${href}"${titleAttr} rel="noopener noreferrer" target="_blank">${text}</a>`;
+        }
+
+        if (isInternalRouteAvailable(href)) {
+          return `<a href="${href}"${titleAttr}>${text}</a>`;
+        }
+
+        return `<span${titleAttr}>${text}</span>`;
       },
     },
   });

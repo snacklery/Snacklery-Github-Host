@@ -85,6 +85,67 @@ export interface LearnNavItem {
   description: string;
 }
 
+const knownInternalRoutes = new Set<string>([
+  "/about",
+  "/products",
+  "/impact",
+  "/business",
+  "/contact",
+  "/privacy-policy",
+  "/terms-conditions",
+  "/cookie-policy",
+  "/disclaimer",
+  "/learn",
+  "/learn/guides",
+  "/learn/faq",
+  "/learn/blog",
+  "/learn/product-guides",
+  "/learn/product-guides/edible-cutlery",
+  "/learn/product-guides/edible-spoons",
+  "/learn/product-guides/edible-sporks",
+  "/learn/product-guides/edible-stirrers",
+  "/learn/product-guides/edible-straws",
+  "/learn/industry-guides",
+  "/learn/industry-guides/airlines",
+  "/learn/industry-guides/cafes",
+  "/learn/industry-guides/caterers",
+  "/learn/industry-guides/corporate-cafeterias",
+  "/learn/industry-guides/events",
+  "/learn/industry-guides/food-delivery",
+  "/learn/industry-guides/hospitals",
+  "/learn/industry-guides/hotels",
+  "/learn/industry-guides/railways",
+  "/learn/industry-guides/restaurants",
+  "/learn/industry-guides/weddings",
+  "/learn/sustainability",
+  "/learn/buying-guide",
+  "/learn/comparisons",
+  "/learn/comparisons/edible-vs-bamboo",
+  "/learn/comparisons/edible-vs-paper",
+  "/learn/comparisons/edible-vs-plastic",
+  "/learn/comparisons/edible-vs-steel",
+  "/learn/comparisons/edible-vs-wooden",
+]);
+
+export function isInternalRouteAvailable(path: string): boolean {
+  if (!path) return false;
+
+  const normalized = path.replace(/\/+$/, "") || "/";
+  if (normalized === "/") return false;
+
+  if (normalized.startsWith("/learn/")) {
+    if (knownInternalRoutes.has(normalized)) return true;
+    const match = /^\/learn\/([^/]+)(?:\/([^/]+))?$/.exec(normalized);
+    if (!match) return false;
+
+    const [, section, slug] = match;
+    if (!slug) return knownInternalRoutes.has(`/learn/${section}`);
+    return knownInternalRoutes.has(`/learn/${section}/${slug}`);
+  }
+
+  return knownInternalRoutes.has(normalized);
+}
+
 export const learnNavItems: LearnNavItem[] = [
   { label: "Edible Cutlery Guide", path: "/learn/product-guides/edible-cutlery", description: "The complete guide to edible cutlery" },
   { label: "FAQ", path: "/learn/faq", description: "Answers to common questions" },

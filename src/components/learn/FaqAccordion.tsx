@@ -14,19 +14,30 @@ interface FaqAccordionProps {
 
 const FaqAccordion = ({ faqs, query }: FaqAccordionProps) => {
   const normalizedQuery = query?.trim().toLowerCase();
+
   return (
     <Accordion type="single" collapsible className="w-full">
-      {faqs.map((faq) => (
-        <AccordionItem key={faq.id} value={faq.id}>
-          <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-          <AccordionContent>
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">{faq.answer}</p>
-              {faq.category && <p className="text-xs uppercase tracking-wide text-primary">{faq.category}</p>}
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      ))}
+      {faqs.map((faq) => {
+        const showMatch = normalizedQuery
+          ? `${faq.question} ${faq.answer}`.toLowerCase().includes(normalizedQuery)
+          : true;
+
+        if (!showMatch) return null;
+
+        return (
+          <AccordionItem key={faq.id} value={faq.id} id={faq.id} className="border-b border-border/60 last:border-b-0">
+            <AccordionTrigger className="text-left py-5 hover:no-underline">
+              <span className="font-medium text-foreground">{faq.question}</span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="space-y-2 pb-4">
+                <p className="text-sm leading-7 text-muted-foreground">{faq.answer}</p>
+                {faq.category && <p className="text-xs uppercase tracking-[0.2em] text-primary">{faq.category}</p>}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        );
+      })}
     </Accordion>
   );
 };

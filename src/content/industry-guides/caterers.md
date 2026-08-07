@@ -63,11 +63,37 @@ For caterers, edible cutlery is as much a sales and positioning tool as an opera
 
 For caterers, the practical planning assumption is that event orders should be confirmed with enough lead time to cover both storage and delivery to the event site, while late-booked events should be assessed separately for whether they can be accommodated without compromising product quality or service timing.
 
+The business case is usually strongest where the cutlery contributes to a broader service story rather than simply replacing disposable plastic. In weddings, premium events, and ESG-conscious corporate functions, edible cutlery can support presentation, client delight, and sustainability positioning in a way that feels more integrated than a standard substitution.
+
+### Phased rollout strategy
+
+1. **Pilot with cocktail hour or a small seated event.** This is usually the lowest-risk first step and gives the team a chance to learn how the product performs in client-facing service.
+2. **Expand to wedding or event proposals with clear client language.** Create a simple explanation of where the product will be used and what the guest experience will be.
+3. **Scale by event type and service moment.** Caterers can expand from a narrow pilot to a broader offering once they understand which events benefit most from the format.
+
+### Common implementation mistakes
+
+**Using edible cutlery for every course by default.** The strongest event applications are usually selective, not universal.
+
+**Underestimating client education.** Some clients and guests will need a short explanation of what the product is and when it will appear.
+
+**Booking too late for the event timeline.** Event logistics are more forgiving when lead time is clear, and edible cutlery should be planned in the same way as other specialty event supplies.
+
 ### Procurement checklist
 
 - [ ] Confirm event lead times and ordering deadlines
 - [ ] Define which courses at each event will use edible cutlery
 - [ ] Client communication template for edible cutlery options
+- [ ] Storage and delivery plan for the event site
+- [ ] Volume estimate by guest count and service moment
+
+### Real-world catering scenarios
+
+**Wedding reception with plated dessert.** A strong fit where presentation and guest experience are central to the event story.
+
+**Corporate gala or client event.** Useful where sustainability messaging and event polish both matter.
+
+**Large banquet with multiple service moments.** Best approached as a selective, planned rollout rather than a blanket replacement across the full event.
 
 ### FAQ
 
@@ -76,3 +102,6 @@ Cocktail hour or small seated events — high visual impact, lower risk.
 
 **Do clients need education about edible cutlery?**
 Yes — many guests and some clients may be unfamiliar; provide a short descriptive blurb and sample as part of proposals.
+
+**Is edible cutlery better for weddings than for everyday catering?**
+Often yes, because weddings are already built around presentation and memorable details, which makes the product feel more integrated than it would in a standard daily-service context.
