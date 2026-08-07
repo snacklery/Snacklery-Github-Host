@@ -35,6 +35,24 @@ function readFrontmatterDate(text) {
 
 function gatherPages() {
   const pages = [];
+  const now = new Date().toISOString().slice(0, 10);
+
+  const staticPaths = [
+    '/learn',
+    '/learn/guides',
+    '/learn/product-guides',
+    '/learn/industry-guides',
+    '/learn/comparisons',
+    '/learn/buying-guide',
+    '/learn/sustainability',
+    '/learn/faq',
+    '/learn/blog',
+  ];
+
+  staticPaths.forEach((pathName) => {
+    pages.push({ loc: `${SITE_ROOT}${pathName}`, lastmod: now });
+  });
+
   if (!fs.existsSync(contentDir)) return pages;
   const collections = fs.readdirSync(contentDir, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
   collections.forEach((coll) => {
@@ -49,7 +67,17 @@ function gatherPages() {
       pages.push({ loc: `${SITE_ROOT}${base}/${slug}`, lastmod: date });
     });
   });
-  return pages;
+
+  const uniquePages = [];
+  const seen = new Set();
+  pages.forEach((page) => {
+    if (!seen.has(page.loc)) {
+      seen.add(page.loc);
+      uniquePages.push(page);
+    }
+  });
+
+  return uniquePages;
 }
 
 function buildSitemap(pages) {
