@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from "react";
+import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,27 +9,26 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "./components/ScrollToTop";
+import ContactModal from "./components/ContactModal";
 import { useContactModal } from "./hooks/useContactModal";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Impact from "./pages/Impact";
+import Business from "./pages/Business";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import CookiePolicy from "./pages/CookiePolicy";
+import Disclaimer from "./pages/Disclaimer";
+import NotFound from "./pages/NotFound";
+import LearnHub from "./pages/learn/LearnHub";
+import GuidesDirectory from "./pages/learn/GuidesDirectory";
+import FaqPage from "./pages/learn/FaqPage";
+import CollectionIndexPage from "./pages/learn/CollectionIndexPage";
+import ArticleDetailPage from "./pages/learn/ArticleDetailPage";
 import type { ContentCollection } from "./lib/content/types";
 import { collectionBasePath } from "./lib/content/paths";
-
-const About = lazy(() => import("./pages/About"));
-const Products = lazy(() => import("./pages/Products"));
-const Impact = lazy(() => import("./pages/Impact"));
-const Business = lazy(() => import("./pages/Business"));
-const Contact = lazy(() => import("./pages/Contact"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const TermsConditions = lazy(() => import("./pages/TermsConditions"));
-const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
-const Disclaimer = lazy(() => import("./pages/Disclaimer"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const LearnHub = lazy(() => import("./pages/learn/LearnHub"));
-const GuidesDirectory = lazy(() => import("./pages/learn/GuidesDirectory"));
-const FaqPage = lazy(() => import("./pages/learn/FaqPage"));
-const CollectionIndexPage = lazy(() => import("./pages/learn/CollectionIndexPage"));
-const ArticleDetailPage = lazy(() => import("./pages/learn/ArticleDetailPage"));
-const ContactModal = lazy(() => import("./components/ContactModal"));
 
 const learnCollections: ContentCollection[] = [
   "blog",
@@ -52,9 +51,7 @@ const App = () => {
           <Toaster />
           <BrowserRouter>
             <ScrollToTop />
-            <Suspense fallback={<div className="min-h-screen bg-background" />}>
-              <AppRoutes openModal={openModal} closeModal={closeModal} isOpen={isOpen} />
-            </Suspense>
+            <AppRoutes openModal={openModal} closeModal={closeModal} isOpen={isOpen} />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
