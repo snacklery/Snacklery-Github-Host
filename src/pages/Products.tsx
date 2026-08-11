@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LazyImage from "@/components/ui/LazyImage";
 
 const Products = () => {
   const shapes = [
@@ -115,12 +116,10 @@ const Products = () => {
               <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
                 <CardContent className="p-6 sm:p-8 space-y-6">
                   <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
-                    <img 
-                      src={shape.image} 
+                    <LazyImage
+                      src={shape.image}
                       alt={shape.name}
                       className="h-full w-full object-contain"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
                   <div>
@@ -159,12 +158,10 @@ const Products = () => {
               <Card key={index} className="group hover:shadow-green transition-smooth animate-fade-in-up">
                 <CardContent className="p-6 sm:p-8 space-y-6">
                   <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-lg overflow-hidden bg-white flex items-center justify-center flex-shrink-0 mx-auto">
-                    <img 
-                      src={flavor.image} 
+                    <LazyImage
+                      src={flavor.image}
                       alt={flavor.name}
                       className="h-full w-full object-contain"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
                   <div>
@@ -198,12 +195,10 @@ const Products = () => {
               >
                 <CardHeader className="text-center pb-4">
                   <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto mb-4 rounded-lg overflow-hidden bg-white flex items-center justify-center">
-                    <img 
-                      src={product.image} 
+                    <LazyImage
+                      src={product.image}
                       alt={product.name}
                       className="h-full w-full object-contain"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">{product.name}</CardTitle>
