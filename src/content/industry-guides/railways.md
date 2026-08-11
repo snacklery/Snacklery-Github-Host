@@ -25,6 +25,8 @@ relatedSlugs:
 
 Railway catering operates at a scale most other industries in this series don't face: a single long-distance train route can serve thousands of meals across a journey, prepared at centralized base kitchens and loaded onto trains as tray service, with passenger turnover happening continuously as the train stops at stations along the route. That volume, combined with the practical reality that trains don't have the disposal infrastructure of a fixed kitchen, makes waste management a central operational question for railway catering in a way it isn't for a restaurant or hotel.
 
+In India, railway catering is closely associated with Indian Railways and IRCTC, which play central roles in managing passenger catering services through base kitchens and licensed catering partners. That context matters because procurement, service model, and contract structure can differ meaningfully from private hospitality or foodservice settings.
+
 This guide covers how edible cutlery fits into that high-volume, tray-based service model, what changes for station food vendors versus on-board catering, and what procurement and sustainability teams should weigh before piloting a rollout.
 
 1. Executive summary (quick snapshot)
@@ -78,6 +80,7 @@ The most useful guidance for railway operators is usually operational rather tha
 Beyond the sustainability case, railway catering operators evaluating edible cutlery should weigh:
 
 - **Contract and tender competitiveness.** Sustainability criteria are increasingly part of how railway catering contracts are tendered and evaluated in many markets; a documented plastic-reduction initiative can be a differentiator in competitive bidding, separate from the direct cost of the cutlery itself.
+- **Public procurement context.** In some government-linked or public-sector procurement environments, buyers may also evaluate sourcing routes through GeM (Government e-Marketplace), so teams should confirm whether that channel applies to the relevant tender or buying process rather than assuming a single procurement path.
 - **Volume-driven pricing leverage.** Railway catering operates at high enough volume that negotiating dedicated volume pricing is worth pursuing directly rather than relying on standard tiers — see our [MOQ & Pricing Guide](/learn/buying-guide/moq-and-pricing).
 - **Cost per meal, not just cost per unit.** At railway catering scale, framing the cost conversation around incremental cost per meal served (rather than raw unit price) tends to make the comparison more useful internally, since it maps directly to how catering contracts are typically priced and evaluated.
 - **Brand/passenger perception for premium service tiers.** Higher-tier or premium rail service, where passenger experience and perception carry more weight in the value proposition, may see a stronger relative ROI from edible cutlery's novelty and "talkable" factor than standard/economy tiers where cost sensitivity dominates.
@@ -135,6 +138,9 @@ Yes, though the use case differs — on-board tray service is closer to airline-
 **What's a realistic pilot starting point for a railway catering operator?**
 A single route or a premium service class, similar to the airline rollout approach, allows base-kitchen integration and passenger feedback to be validated before wider network rollout.
 
+**Does Indian Railways or IRCTC require plastic-free catering?**
+The exact requirement depends on the specific contract, route, and operating entity, and it should be confirmed directly with the relevant procurement or compliance team. Until the official policy is verified, it is best to treat any plastic-free or single-use-plastic requirement as a contract-specific question rather than a general rule.
+
 **Can edible cutlery help with railway catering contract tenders that include sustainability criteria?**
 It can support that portion of a tender by providing a documented single-use plastic reduction initiative, though the direct business case (cost, integration) should still be evaluated on its own merits. For formal tender review, a clear summary of product use cases, substitution logic, and operational fit is typically more useful than a generic sustainability claim.
 
@@ -162,7 +168,7 @@ It can support that portion of a tender by providing a documented single-use pla
 1. **Hero image:** Photography of edible cutlery in a train tray-service context (or, if unavailable, a clearly labeled representative mock-up) rather than generic product photography.
 2. **Base-kitchen-to-service timeline graphic:** A visual timeline showing meal preparation, storage, loading, and service points, highlighting where shelf-life and storage considerations matter most — directly supports the "High-volume meal service" section.
 3. **Route/class pilot comparison graphic:** A simple visual comparing premium-tier vs. standard-tier pilot considerations (volume, budget flexibility, feedback quality) to support rollout-strategy decision-making.
-4. **Alt text guidance:** e.g., `"Edible cutlery on railway tray meal service"` — descriptive and industry-specific.
+4. **Alt text guidance:** e.g., `"Edible cutlery on a railway meal tray"` — descriptive and industry-specific.
 
 ### JSON-LD Schema Recommendation
 

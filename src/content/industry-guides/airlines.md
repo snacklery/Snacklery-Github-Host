@@ -66,7 +66,7 @@ The same experience risk applies here as elsewhere: an edible utensil that under
 
 ### Operational constraints specific to aviation
 
-**International waste disposal regulation.** This is a genuinely important and often overlooked consideration: many countries regulate international catering waste under biosecurity rules, requiring it to be incinerated or specially treated regardless of whether the material is naturally biodegradable or compostable. This means the "it breaks down naturally if discarded" sustainability pitch that applies cleanly to a restaurant or hotel doesn't automatically carry over to international flight waste, which may be disposed of under the same regulated process as any other catering waste, irrespective of its biodegradability. Airlines and sustainability teams should treat the "eaten, not wasted" case as the primary sustainability driver for edible cutlery on international routes, rather than relying on the composting/biodegradation argument that applies elsewhere in this guide series.
+**International waste disposal regulation.** This is a genuinely important and often overlooked consideration: disposal requirements for international catering waste can vary by destination country because of biosecurity and customs regulations, and some jurisdictions require incineration or other special treatment regardless of whether the material is naturally biodegradable or compostable. This means the "it breaks down naturally if discarded" sustainability pitch that applies cleanly to a restaurant or hotel doesn't automatically carry over to international flight waste, which may be handled under destination-specific requirements rather than a single global standard. Airlines and sustainability teams should treat the "eaten, not wasted" case as the primary sustainability driver for edible cutlery on international routes, rather than relying on the composting/biodegradation argument that applies elsewhere in this guide series.
 
 **Regulatory and safety approval.** New catering products introduced to an airline's supply chain typically go through the airline's own food safety and catering approval process, separate from general food-safety manufacturing standards. Snacklery can support this process with product specifications, food-safety documentation, and a clear explanation of the product's intended use case so airline teams can route the request through their standard catering approval workflow.
 
@@ -76,7 +76,7 @@ The same experience risk applies here as elsewhere: an edible utensil that under
 
 Airlines face increasing scrutiny — from regulators, investors, and passengers — over single-use plastic and broader environmental impact, and in-flight catering is one of the more visible, easily quantifiable areas to report progress on. Edible cutlery can contribute directly to single-use plastic reduction metrics, since it displaces a countable number of plastic units per flight.
 
-As noted above, the sustainability framing for airlines should lean primarily on **plastic displacement (eaten or discarded as a single food-based item, not multiple plastic components)** rather than the biodegradability/composting angle emphasized in some of our other industry guides, given international waste disposal regulation. See our [ESG in Food Service](/learn/sustainability/esg-food-service) guide (coming soon) for a broader reporting framework.
+As noted above, the sustainability framing for airlines should lean primarily on **plastic displacement (eaten or discarded as a single food-based item, not multiple plastic components)** rather than the biodegradability/composting angle emphasized in some of our other industry guides, given international waste disposal regulation. Airlines increasingly align their sustainability initiatives with industry best practices and guidance discussed through organizations such as IATA. See our [ESG in Food Service](/learn/sustainability/esg-food-service) guide (coming soon) for a broader reporting framework.
 
 For ESG reporting, the most useful data is a simple per-flight or per-route estimate of units supplied and plastic units displaced, combined with the product's role as a direct substitute for single-use plastic cutlery rather than as a compostability claim.
 
@@ -147,6 +147,9 @@ Not necessarily in practice — many countries regulate international catering w
 **Can edible cutlery go through an airline's existing catering approval process?**
 It would need to be evaluated through each airline's internal food safety and catering approval procedures, separate from general food-manufacturing safety standards. A practical approach is to share product specifications, ingredient information, and handling guidance early so the approval team can review it against the existing catering checklist.
 
+**Is there one global rule for airline catering waste disposal, or does it vary by country?**
+It varies by country and jurisdiction, because destination-specific biosecurity and customs requirements can affect how catering waste is handled after a flight. That is why airline teams should review route-specific disposal expectations rather than assume a single global rule applies.
+
 **What's a realistic starting point for an airline piloting edible cutlery?**
 A limited route or a specific cabin class (often premium cabin service) is a common lower-risk starting point, allowing catering facility integration and passenger feedback to be validated before broader rollout.
 
@@ -173,7 +176,7 @@ A limited route or a specific cabin class (often premium cabin service) is a com
 1. **Hero image:** Photography of edible cutlery in an in-flight meal tray context, rather than generic product photography, to ground the page in the specific industry.
 2. **Weight comparison graphic:** Once verified data is available, a simple visual comparing edible cutlery weight to standard plastic cutlery — a key data point airline procurement will look for immediately. **[Do not publish until Snacklery-specific weight data is confirmed.]**
 3. **Catering timeline graphic:** A visual of the catering-facility-to-cabin timeline, showing where shelf-life and storage considerations apply — supports the "Meal service workflow fit" section.
-4. **Alt text guidance:** e.g., `"Edible cutlery on in-flight meal tray"` — descriptive and aviation-specific.
+4. **Alt text guidance:** e.g., `"Edible cutlery on an in-flight meal tray"` — descriptive and aviation-specific.
 
 ### JSON-LD Schema Recommendation
 

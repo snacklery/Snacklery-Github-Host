@@ -41,7 +41,7 @@ This guide covers how restaurants should think about menu fit, dine-in versus ta
 
 ### Executive summary (quick snapshot)
 
-**Best products for this industry:** Edible spoons for desserts and soup courses; edible forks or sporks for mains depending on menu mix; edible stirrers for beverage service. See our [Product Guides](/learn/product-guides) for format-specific detail.
+**Best products for this industry:** Edible spoons for desserts and soup courses; edible sporks for mains depending on menu mix; edible stirrers for beverage service. See our [Product Guides](/learn/product-guides) for format-specific detail.
 
 **Primary business benefits:** A visible, talkable point of differentiation in a crowded dining market; direct contribution to reducing single-use plastic, relevant both for guest-facing sustainability positioning and for takeaway/delivery packaging waste.
 
@@ -73,7 +73,8 @@ Edible cutlery functions as both a utensil and a marketing detail in a restauran
 
 - **Cost per cover, not just per unit.** Framing cutlery cost against average check size or covers served gives a more useful internal comparison than raw per-unit pricing alone.
 - **Menu-specific piloting reduces waste.** Rolling out to one course first avoids over-ordering formats that don't end up fitting your actual menu mix.
-- **Review and social visibility.** For restaurants actively building an online reputation, a guest-noticed detail like edible cutlery can generate organic mentions that are difficult to manufacture through other means.
+- **Review and social visibility.** For restaurants actively building an online reputation, a guest-noticed detail like edible cutlery can generate organic mentions that are difficult to manufacture through other means, especially on online restaurant review and food delivery platforms.
+- **Supplier evaluation.** Restaurants comparing vendors can use the [Evaluating a supplier](/learn/product-guides/edible-cutlery#evaluating-a-supplier) section as a practical reference for product specifications, documentation, and fit questions.
 
 ### Phased rollout strategy
 
@@ -122,6 +123,9 @@ It can, but transit time and extended contact before consumption should be facto
 **How should servers respond if a guest asks whether the cutlery is really edible?**
 Staff should be briefed on the basics — what it's made from, that it's genuinely food-safe, and that eating it is optional — so they can answer confidently rather than guessing.
 
+**Does a restaurant need FSSAI approval to serve edible cutlery?**
+The exact requirement depends on the product format, the manufacturer’s documentation, and the applicable local food safety regulations. Restaurants should source from compliant manufacturers and follow the relevant food safety requirements in their jurisdiction rather than assume a single rule applies. In India, any specific FSSAI-related expectation should be confirmed directly with the relevant compliance or food safety team.
+
 ### Internal Linking Suggestions
 
 - Link **"Product Guides"** → `/learn/product-guides`
@@ -144,7 +148,7 @@ Staff should be briefed on the basics — what it's made from, that it's genuine
 
 1. **Hero image:** Edible spoon photographed with a dessert course, reflecting the recommended pilot starting point.
 2. **Menu-fit graphic:** Visual mapping of course type (soup, dessert, mains, beverage) to recommended edible cutlery format.
-3. **Alt text guidance:** e.g., `"Edible spoon served with restaurant dessert course"`.
+3. **Alt text guidance:** e.g., `"Edible cutlery served with a restaurant dessert course"`.
 
 ### JSON-LD Schema Recommendation
 
