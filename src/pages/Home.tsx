@@ -308,7 +308,7 @@ const Home = ({ onContactClick }: HomeProps) => {
               <table className="w-full min-w-[640px]">
                 <thead className="bg-primary text-primary-foreground">
                   <tr>
-                    <th className="px-6 py-4 text-left font-semibold">Material (per 1,000 kg)</th>
+                    <th className="sticky left-0 z-20 px-6 py-4 text-left font-semibold bg-primary text-primary-foreground shadow-[1px_0_0_rgba(255,255,255,0.12)]">Material (per 1,000 kg)</th>
                     <th className="px-6 py-4 text-center font-semibold">Energy Consumption</th>
                     <th className="px-6 py-4 text-center font-semibold">Water Consumption</th>
                     <th className="px-6 py-4 text-center font-semibold">CO₂ Emissions</th>
@@ -316,31 +316,31 @@ const Home = ({ onContactClick }: HomeProps) => {
                 </thead>
                 <tbody className="divide-y divide-muted">
                   <tr>
-                    <td className="px-6 py-4 font-medium">Plastic (PP)</td>
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 font-medium shadow-[1px_0_0_hsl(var(--border))]">Plastic (PP)</td>
                     <td className="px-6 py-4 text-center">20,760 kWh</td>
                     <td className="px-6 py-4 text-center">43,079 L</td>
                     <td className="px-6 py-4 text-center">1,680 kg</td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 font-medium">Plastic (PS)</td>
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 font-medium shadow-[1px_0_0_hsl(var(--border))]">Plastic (PS)</td>
                     <td className="px-6 py-4 text-center">50,520 kWh</td>
                     <td className="px-6 py-4 text-center">172,780 L</td>
                     <td className="px-6 py-4 text-center">2,530 kg</td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 font-medium">Wood</td>
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 font-medium shadow-[1px_0_0_hsl(var(--border))]">Wood</td>
                     <td className="px-6 py-4 text-center">9,520 kWh</td>
                     <td className="px-6 py-4 text-center">22,100 L</td>
                     <td className="px-6 py-4 text-center">2,000 kg</td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4 font-medium">Bio-Plastic (PLA)</td>
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 font-medium shadow-[1px_0_0_hsl(var(--border))]">Bio-Plastic (PLA)</td>
                     <td className="px-6 py-4 text-center">11,930 kWh</td>
                     <td className="px-6 py-4 text-center">69,730 L</td>
                     <td className="px-6 py-4 text-center">6,380 kg</td>
                   </tr>
-                  <tr className="bg-primary/5">
-                    <td className="px-6 py-4 font-bold text-primary">Snacklery Edible Cutlery</td>
+                  <tr className="bg-[#f4d7b5]">
+                    <td className="sticky left-0 z-20 bg-[#f4d7b5] px-6 py-4 font-bold text-primary shadow-[1px_0_0_hsl(var(--border))]">Snacklery Edible Cutlery</td>
                     <td className="px-6 py-4 text-center font-bold text-primary">4,600 kWh</td>
                     <td className="px-6 py-4 text-center font-bold text-primary">12,000 L</td>
                     <td className="px-6 py-4 text-center font-bold text-primary">1,270 kg</td>

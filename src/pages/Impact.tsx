@@ -395,39 +395,39 @@ const Impact = () => {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="text-left font-semibold text-foreground">Material</TableHead>
-                      <TableHead className="text-center font-semibold text-foreground">Energy (kWh/spoon)</TableHead>
-                      <TableHead className="text-center font-semibold text-foreground">Water (L/spoon)</TableHead>
-                      <TableHead className="text-center font-semibold text-foreground">CO₂ (kg/spoon)</TableHead>
+                      <TableHead className="sticky left-0 z-20 bg-[#d87a2d] px-6 py-4 text-left font-semibold text-primary-foreground shadow-[1px_0_0_rgba(255,255,255,0.12)]">Material</TableHead>
+                      <TableHead className="bg-[#d87a2d] px-6 py-4 text-center font-semibold text-primary-foreground">Energy (kWh/spoon)</TableHead>
+                      <TableHead className="bg-[#d87a2d] px-6 py-4 text-center font-semibold text-primary-foreground">Water (L/spoon)</TableHead>
+                      <TableHead className="bg-[#d87a2d] px-6 py-4 text-center font-semibold text-primary-foreground">CO₂ (kg/spoon)</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     <TableRow>
-                      <TableCell className="font-medium">Polypropylene (PP)</TableCell>
+                      <TableCell className="sticky left-0 z-10 bg-card font-medium shadow-[1px_0_0_hsl(var(--border))]">Polypropylene (PP)</TableCell>
                       <TableCell className="text-center">0.208</TableCell>
                       <TableCell className="text-center">0.431</TableCell>
                       <TableCell className="text-center">0.0168</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Polystyrene (PS)</TableCell>
+                      <TableCell className="sticky left-0 z-10 bg-card font-medium shadow-[1px_0_0_hsl(var(--border))]">Polystyrene (PS)</TableCell>
                       <TableCell className="text-center">0.251</TableCell>
                       <TableCell className="text-center">1.728</TableCell>
                       <TableCell className="text-center">0.0253</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Wood</TableCell>
+                      <TableCell className="sticky left-0 z-10 bg-card font-medium shadow-[1px_0_0_hsl(var(--border))]">Wood</TableCell>
                       <TableCell className="text-center">0.095</TableCell>
                       <TableCell className="text-center">0.153</TableCell>
                       <TableCell className="text-center">0.0200</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium">Bio-Plastic (PLA)</TableCell>
+                      <TableCell className="sticky left-0 z-10 bg-card font-medium shadow-[1px_0_0_hsl(var(--border))]">Bio-Plastic (PLA)</TableCell>
                       <TableCell className="text-center">0.119</TableCell>
                       <TableCell className="text-center">0.697</TableCell>
                       <TableCell className="text-center">0.0638</TableCell>
                     </TableRow>
-                    <TableRow className="bg-primary/5 hover:bg-primary/10">
-                      <TableCell className="font-bold text-primary">Snacklery (edible)</TableCell>
+                    <TableRow className="bg-[#f4d7b5] hover:bg-[#f4d7b5]">
+                      <TableCell className="sticky left-0 z-20 bg-[#f4d7b5] font-bold text-primary shadow-[1px_0_0_hsl(var(--border))]">Snacklery (edible)</TableCell>
                       <TableCell className="text-center font-bold text-primary">0.046</TableCell>
                       <TableCell className="text-center font-bold text-primary">0.120</TableCell>
                       <TableCell className="text-center font-bold text-primary">0.0127</TableCell>
