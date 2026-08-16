@@ -26,7 +26,7 @@ relatedSlugs:
 
 ### Introduction
 
-Stirrers are usually the highest-volume edible cutlery SKU an operation orders, because beverage service — coffee, tea, cocktails — turns over faster than food service in most hospitality settings. A hotel lobby bar or airport café can go through hundreds of stirrers in a single shift, which makes this product category both a high-impact sustainability swap and a high-scrutiny procurement decision: the unit economics matter more here than almost anywhere else in the edible cutlery range, simply because of volume.
+Stirrers are usually the highest-volume edible cutlery SKU an operation orders, because beverage service — coffee, tea, cocktails — turns over faster than food service in most hospitality settings. A hotel lobby bar or airport café can go through hundreds of stirrers in a single shift, which makes this product category both a high-impact sustainability swap and a high-scrutiny procurement decision: the unit economics matter more here than almost anywhere else in the edible cutlery range, simply because of volume. For beverage teams, it's often the first genuine plastic stirrer alternative they evaluate seriously, precisely because the volume makes the decision impossible to ignore.
 
 This guide covers what makes stirrer construction different from spoons and forks, which formats suit which beverage types, and how to think about ordering at the volumes beverage programs typically require. For the broader category context, see our [Edible Cutlery Buyer's Guide](/learn/product-guides/edible-cutlery).
 
@@ -52,7 +52,7 @@ Snacklery's edible stirrers follow the same core baking process as the rest of t
 
 - **Short stirrers** — sized for espresso cups and small hot-drink formats, minimal surface area in contact with liquid
 - **Standard coffee/tea stirrers** — sized for a standard cup or mug, designed for active stirring followed by removal
-- **Long cocktail stirrers** — sized for tall glasses, built with slightly more rigidity to stay upright and legible as a garnish if left in the drink
+- **Long cocktail stirrers** — sized for tall glasses, built with slightly more rigidity to stay upright and legible as a garnish if left in the drink — functioning as an edible swizzle stick for bar programs that already think in those terms.
 - **Mini dessert/beverage spoons functioning as stirrers** — a crossover format for drinks meant to be sipped and stirred over a longer period (iced coffee, milkshakes)
 
 For beverage programs, the most useful procurement detail is a simple format map showing stirrer lengths, thicknesses, and the SKU options available so teams can match the product to espresso, coffee, iced drinks, or cocktails directly.
@@ -120,13 +120,15 @@ This varies enormously by beverage volume and service style, but a practical ben
 **Can edible stirrers be custom-branded for a hotel or event?**
 Custom shaping and branding are common requests for high-volume beverage programs, particularly events and hotel bars, and private-label flexibility should be discussed early in the procurement process.
 
+**Is an edible stirrer the same as a swizzle stick?**
+Functionally yes — a long-format edible stirrer is designed to work as an edible swizzle stick for cocktail service, staying upright as a garnish if left in the glass. See the decision table above for which format suits which beverage.
 
 ### Internal Linking Suggestions
 
 - Link **"Edible Cutlery Buyer's Guide"** → `/learn/product-guides/edible-cutlery` (from intro)
 - Link **"Edible Spoons Guide"** → `/learn/product-guides/edible-spoons`
 - Link **"Airlines Industry Guide"** → `/learn/industry-guides/airlines` (once published)
-- Link **"Wedding Catering Industry Guide"** → `/learn/industry-guides/wedding-catering` (once published)
+- Link **"Wedding and Event Bar Service"** → `/learn/industry-guides/events`
 - Link **"MOQ & Pricing Guide"** → `/learn/buying-guide/moq-and-pricing` (once published)
 - Link this page from the Edible Cutlery pillar guide's "Types of edible cutlery" section
 - Link this page from any Café, Hotel, or Events industry guide discussing beverage service
@@ -144,7 +146,7 @@ Custom shaping and branding are common requests for high-volume beverage program
 1. **Hero image:** Product photography of the stirrer format range (short, standard, long cocktail) laid out together against a neutral background.
 2. **Decision table graphic:** Visual version of the "Matching stirrers to beverage type" table above — a strong standalone reference graphic for beverage program managers, reusable in sales collateral.
 3. **In-context photography:** Stirrer in a coffee cup, stirrer as a cocktail garnish, stirrer in an iced drink — placed in the "Real-world operational scenarios" section as visual evidence.
-4. **Alt text guidance:** e.g., `"Edible cocktail stirrer for hotel bar service"`, `"Edible coffee stirrer for café service"` — descriptive and format/use-case specific.
+4. **Alt text guidance:** e.g., `"Edible stirrer and swizzle stick formats — short, standard, and cocktail length"`, `"Edible swizzle stick as cocktail garnish, hotel bar service"`, `"Edible coffee stirrer for café service"` — descriptive and format/use-case specific.
 
 ### JSON-LD Schema Recommendation
 

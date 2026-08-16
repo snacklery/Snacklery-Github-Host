@@ -48,7 +48,7 @@ const Home = ({ onContactClick }: HomeProps) => {
                   </Link>
                 </Button>
                 <Button variant="outline" size="xl" className="px-10 py-4 border-2" asChild>
-                  <Link to="/contact">Partner With Us</Link>
+                  <Link to="/impact#calculator-card">Impact You Can Make</Link>
                 </Button>
               </div>
             </div>
@@ -234,8 +234,8 @@ const Home = ({ onContactClick }: HomeProps) => {
           
           <div className="text-center mt-12 animate-fade-in-up">
             <Button variant="hero" size="xl" className="px-10 py-4" asChild>
-              <Link to="/business">
-                Partner with Us <ArrowRight className="ml-3 h-5 w-5" />
+              <Link to="/impact#calculator-card">
+                Impact You Can Make <ArrowRight className="ml-3 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -301,9 +301,11 @@ const Home = ({ onContactClick }: HomeProps) => {
           </div>
 
           {/* Impact Table */}
-          <div className="overflow-x-auto mb-12 animate-fade-in-up">
-            <div className="bg-card rounded-2xl shadow-soft overflow-hidden">
-              <table className="w-full">
+          <div
+            className="overflow-x-auto mb-3 animate-fade-in-up cursor-ew-resize md:cursor-default [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] [scrollbar-color:rgba(15,23,42,0.35)_transparent] active:cursor-grabbing"
+          >
+            <div className="bg-card rounded-2xl shadow-soft overflow-hidden min-w-full">
+              <table className="w-full min-w-[640px]">
                 <thead className="bg-primary text-primary-foreground">
                   <tr>
                     <th className="px-6 py-4 text-left font-semibold">Material (per 1,000 kg)</th>
@@ -346,6 +348,10 @@ const Home = ({ onContactClick }: HomeProps) => {
                 </tbody>
               </table>
             </div>
+            <div className="md:hidden flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground/70 mt-3 select-none">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary/70"></span>
+              Drag / swipe to view
+            </div>
             <p className="text-xs text-muted-foreground/60 italic text-center mt-2">
               *Impact figures are estimates from third-party lifecycle data for informational purposes only.
             </p>
@@ -381,7 +387,7 @@ const Home = ({ onContactClick }: HomeProps) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button variant="outline" size="xl" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-10 py-4 border-2" asChild>
-              <Link to="/contact">Partner With Us</Link>
+              <Link to="/impact#calculator-card">Impact You Can Make</Link>
             </Button>
             <Button 
               variant="outline" 

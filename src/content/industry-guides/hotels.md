@@ -53,13 +53,13 @@ Each of these has different volume, dwell-time, and presentation requirements �
 
 ### Guest experience impact
 
-For a hotel specifically, edible cutlery does double duty: it's a functional utensil and a guest-facing detail that gets noticed, in a category (hospitality) where small, well-executed details disproportionately shape guest perception and reviews. A guest who wouldn't think twice about ordinary plastic cutlery is far more likely to comment on, photograph, or mention an edible spoon in a review — which makes this one of the few operational changes that functions as marketing as much as it does sustainability.
+For a hotel specifically, edible cutlery does double duty: it's a functional utensil and a guest-facing detail that gets noticed, in a category (hospitality) where small, well-executed details disproportionately shape guest perception and reviews. A guest who wouldn't think twice about ordinary plastic cutlery is far more likely to comment on, photograph, or mention an edible spoon in a review — which makes this one of the few operational changes that functions as marketing as much as it does sustainability. In practice, that can also support a more eco-friendly hotel cutlery experience in room service and amenity settings where the product is visible to guests rather than simply disposed of behind the scenes.
 
 The guest experience risk to manage: edible cutlery that underperforms (softens too early, feels flimsy) creates a worse impression than plastic cutlery would have, precisely because it's more noticeable. This is why matching product format to actual use case (see the [Edible Cutlery Buyer's Guide](/learn/product-guides/edible-cutlery) performance section) matters more in a guest-facing hospitality context than it might in a lower-visibility setting like a corporate cafeteria.
 
 ### ESG and sustainability reporting
 
-Single-use plastic reduction is a common line item in hospitality ESG and sustainability reporting, and edible cutlery can contribute directly to that metric — replacing plastic units with a product that generates no plastic waste stream at all. For hotels working toward specific sustainability certifications or brand-level environmental commitments, edible cutlery is generally easier to quantify and report on than harder-to-measure initiatives (energy efficiency programs, supply chain emissions), since it maps directly to a countable reduction in single-use plastic units purchased and disposed of.
+Single-use plastic reduction is a common line item in hospitality ESG and sustainability reporting, and edible cutlery can contribute directly to that metric — replacing plastic units with a product that generates no plastic waste stream at all. For hotels working toward sustainability certifications such as Green Key or EarthCheck, edible cutlery is generally easier to quantify and report on than harder-to-measure initiatives (energy efficiency programs, supply chain emissions), since it maps directly to a countable reduction in single-use plastic units purchased and disposed of.
 
 For hotel sustainability teams, the most helpful documentation is a simple count-based summary showing units supplied, estimated plastic units displaced, and the role of the product in reducing single-use plastic within the property’s broader waste and procurement reporting framework.
 
@@ -126,6 +126,9 @@ Room service or a single restaurant outlet is a common starting point, since it 
 **Can edible cutlery support a hotel's sustainability certification or ESG reporting?**
 It can contribute to single-use plastic reduction metrics commonly tracked in hospitality sustainability reporting, and the value is strongest when the reporting team can connect the pilot to a measurable unit-level reduction rather than a general sustainability claim.
 
+**Does edible cutlery count toward hotel sustainability certifications like Green Key or EarthCheck?**
+It can support that conversation when it is documented as part of a hotel's single-use plastic reduction efforts, but the exact crediting approach should be confirmed with the relevant certification program and the hotel's own sustainability team.
+
 **Is edible cutlery suitable for banquet and wedding service?**
 Yes — plated banquet courses are a strong fit, since presentation already matters in that setting and edible cutlery adds a talkable, memorable detail guests notice.
 
@@ -145,9 +148,10 @@ Custom branding and private labeling are common requests for hospitality bulk or
 - Link **"Edible Stirrers Guide"** → `/learn/product-guides/edible-stirrers`
 - Link **"Edible Sporks Guide"** → `/learn/product-guides/edible-sporks`
 - Link **"ESG in Food Service"** → `/learn/sustainability/esg-food-service` (once published)
-- Link **"Buying Guide"** and **"MOQ & Pricing"** → `/learn/buying-guide` and `/learn/buying-guide/moq-and-pricing`
+- Link **"Buying Guide"** → `/learn/buying-guide`
+- Link **"MOQ & Pricing"** → `/learn/buying-guide/moq-and-pricing`
 - Link this page from the Learn hub's Industry Guides section as the flagship industry example
-- Cross-link with the future **Wedding Catering** and **Events** industry guides, since banquet use cases overlap significantly
+- Cross-link with the **Events** industry guide, since banquet use cases overlap significantly
 
 ### Call-to-Action
 
@@ -162,7 +166,7 @@ Custom branding and private labeling are common requests for hospitality bulk or
 1. **Hero image:** Photography showing edible cutlery in a hotel context — an in-room dining tray or a banquet place setting — rather than generic product photography, to ground the page in the specific industry.
 2. **Deployment roadmap graphic:** Visual version of the 4-step "Deployment strategy" phased rollout — useful both on-page and as sales collateral for hotel group presentations.
 3. **Outlet-by-outlet use case graphic:** A simple diagram mapping hotel outlets (room service, restaurant, bar, banquets, breakfast) to recommended edible cutlery formats.
-4. **Alt text guidance:** e.g., `"Edible cutlery on hotel room service tray"`, `"Edible spoon at hotel banquet place setting"` — descriptive and hospitality-specific.
+4. **Alt text guidance:** e.g., `"Edible cutlery on a hotel room service tray"`, `"Edible spoon at a hotel banquet place setting"` — descriptive and hospitality-specific.
 
 ### JSON-LD Schema Recommendation
 

@@ -55,6 +55,8 @@ Edible straws are made from the same grain-flour base as the rest of Snacklery's
 - **Length and diameter** — needs to match the container (a short glass vs. a tall one) since a straw sized too long for its drink spends more time submerged than necessary
 - **Bake density** — a denser bake extends wet-performance but can affect mouthfeel; this is the core engineering trade-off in edible straw design
 
+Bubble tea and boba service are also a useful reference point here: the straw has to stay functional through a longer, more immersive sipping experience than a quick cocktail or soft drink, which makes the wet-performance trade-off more visible and often more consequential for procurement teams than a shorter beverage. That is one of the clearest cases where the right format and the right expectation need to line up before rollout.
+
 For procurement teams, the most useful spec detail is a simple profile of wall thickness, available lengths, and the practical wet-performance expectations for each straw format so buyers can match it to the right drink types.
 
 ### Comparison: edible straws vs. other straw alternatives
@@ -133,11 +135,13 @@ Staff should be prepared to offer a replacement, the same way they would for a p
 **Can edible straws be used for hot drinks?**
 Straws are primarily a cold-beverage product by convention, and hot-beverage use should be treated as a special-case decision because the heat and continuous liquid contact change the performance expectation considerably.
 
+**Do edible straws dissolve completely in a drink?**
+They soften and eventually break down as they remain in contact with liquid, so the honest answer is that they do not stay intact indefinitely. The practical question is how long they remain functional before that change becomes noticeable for the guest.
 
 ### Internal Linking Suggestions
 
 - Link **"Edible Cutlery Buyer's Guide"** → `/learn/product-guides/edible-cutlery` (from intro and storage reference)
-- Link **"Buying Guide"** → `/learn/buying-guide`
+- Link **"MOQ & Pricing Guide"** → `/learn/buying-guide`
 - Link this page from the Edible Cutlery pillar guide's "Types of edible cutlery" section
 - Link this page from any Café, Hotel Bar, or Events industry guide discussing beverage programs
 - Cross-link with [Edible Stirrers Guide](/learn/product-guides/edible-stirrers) under a "related beverage products" block, since procurement teams evaluating one often evaluate both
@@ -156,7 +160,7 @@ Straws are primarily a cold-beverage product by convention, and hot-beverage use
 2. **Comparison table graphic:** Visual version of the "Edible vs. paper vs. plastic straw" table — a strong, shareable reference given how frequently straws specifically are searched in the plastic-alternative conversation.
 3. **Use-case fit graphic:** A simple visual (green/yellow/red style) showing which drink types are a strong vs. weak fit for edible straws, directly supporting the "Where edible straws are a strong fit" section.
 4. **In-context photography:** Straw in a cocktail glass at an event, straw in a soft drink — avoid photographing it in an iced coffee context, since that undersells the honest limitation this guide establishes.
-5. **Alt text guidance:** e.g., `"Edible cocktail straw for hotel bar service"` — descriptive and use-case specific, avoiding implied claims about durability the copy doesn't support.
+5. **Alt text guidance:** e.g., `"Edible straw for cocktail and beverage service"` — descriptive and use-case specific, avoiding implied claims about durability the copy doesn't support.
 
 ### JSON-LD Schema Recommendation
 

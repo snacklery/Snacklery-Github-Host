@@ -2,12 +2,22 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     // Prevent browser scroll restoration
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
+    }
+
+    if (hash) {
+      const target = document.getElementById(hash.replace('#', ''));
+      if (target) {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        });
+        return;
+      }
     }
 
     // Force instant jump to top on route change
@@ -25,7 +35,7 @@ const ScrollToTop = () => {
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };
