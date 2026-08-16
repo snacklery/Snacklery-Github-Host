@@ -302,9 +302,9 @@ const Home = ({ onContactClick }: HomeProps) => {
 
           {/* Impact Table */}
           <div
-            className="overflow-x-auto mb-3 animate-fade-in-up cursor-ew-resize md:cursor-default [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] [scrollbar-color:rgba(15,23,42,0.35)_transparent] active:cursor-grabbing"
+            className="w-full overflow-x-auto animate-fade-in-up touch-pan-x rounded-2xl border border-border bg-card shadow-soft [-webkit-overflow-scrolling:touch] [scrollbar-width:thin] [scrollbar-color:rgba(15,23,42,0.35)_transparent]"
           >
-            <div className="bg-card rounded-2xl shadow-soft overflow-hidden min-w-full">
+            <div className="min-w-full">
               <table className="w-full min-w-[640px]">
                 <thead className="bg-primary text-primary-foreground">
                   <tr>
@@ -348,14 +348,10 @@ const Home = ({ onContactClick }: HomeProps) => {
                 </tbody>
               </table>
             </div>
-            <div className="md:hidden flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground/70 mt-3 select-none">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary/70"></span>
-              Drag / swipe to view
-            </div>
-            <p className="text-xs text-muted-foreground/60 italic text-center mt-2">
-              *Impact figures are estimates from third-party lifecycle data for informational purposes only.
-            </p>
           </div>
+          <p className="text-xs text-muted-foreground/60 italic text-center mt-2 mb-3">
+            *Impact figures are estimates from third-party lifecycle data for informational purposes only.
+          </p>
 
           {/* Key Benefits */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up">
